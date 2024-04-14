@@ -6,32 +6,12 @@ import React, { useEffect, useState } from 'react';
 import MenuIcon from '@mui/icons-material/Menu';
 import theme from '../../../public/theme';
 
-const slideMenu = keyframes`
-  from {
-    height: 10%;
-  }
-
-  to {
-    height: 80%;
-  }
-`
-const slideMenuReversed = keyframes`
-  from {
-    height: 80%;
-  }
-
-  to {
-    height: 10%;
-  }
-`
-
 const NavBarContainer = styled.div<{visible: boolean, menuOpen: boolean}>`
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: nowrap;
   width: 80%;
-  height: auto;
   background-color: ${({ theme }) => theme.colors.midnightBlue};
   border-radius: 20px;
   margin: 20px 210px 0px 210px;
@@ -39,21 +19,19 @@ const NavBarContainer = styled.div<{visible: boolean, menuOpen: boolean}>`
   padding: 8px 60px;
   z-index: 9999 !important;
   overflow-y: hidden;
-  transition: top 0.3s ease-in-out;
-  top: ${({visible}) => visible ? '0' : '-70px'}; 
+  transition: all 0.3s ease-in-out;
+  top: ${({visible}) => visible ? '0' : '-70px'};
 
   @media (max-width: 1280px) {
-    transition: all 0.3s ease-in-out;
     margin: 0px;
     padding: 12px 16px;
     flex-direction: ${({menuOpen}) => menuOpen ? `column` : `row`};
-    height: ${({menuOpen}) => menuOpen ? `fit-content` : `auto`}; 
+    max-height: ${({menuOpen}) => menuOpen ? `1000px` : `100px`};
+    min-height: ${({menuOpen}) => menuOpen ? `500px` : `0px`};
     align-items: flex-start;
     gap: 108px;
     width: 100%;
     border-radius: ${({menuOpen}) => menuOpen ? `0px` : `36px`};
-    animation: ${({ menuOpen }) =>
-      menuOpen ? css`${slideMenu} 0.3s ease-in-out` : css`${slideMenuReversed} 0.3s ease-in-out`};
   }
 `;
 
@@ -166,6 +144,7 @@ export function NavBar() {
       <Button onClick={() => {
         const home = document.getElementById('home')
         if (home) {
+          setMenuOpen(false);
           home.scrollIntoView({behavior: 'smooth'})
         }
       }}>
