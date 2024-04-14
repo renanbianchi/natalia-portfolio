@@ -12,6 +12,13 @@ const ContentContainer = styled.div<{reversed?: boolean}>`
   margin-top: 79px;
   margin-bottom: 140px;
   gap: 113px;
+
+  @media (max-width: 1280px) {
+    flex-direction: ${({ reversed }) => reversed ? `column-reverse` : `column`};
+    margin-top: 40px;
+    margin-bottom: 40px;
+    gap: 50px;
+  }
 `;
 
 const PictureContainer = styled.div<{reversed?: boolean}>`
@@ -23,6 +30,10 @@ const PictureContainer = styled.div<{reversed?: boolean}>`
     border-top-right-radius: ${({ reversed }) => (reversed ? '' : '250px')};
     border-bottom-left-radius: ${({ reversed }) => (reversed ? '250px' : '')};
     border-bottom-right-radius: ${({ reversed }) => (reversed ? '250px' : '')};
+
+    @media (max-width: 1280px) {
+    width: 100%;
+    }
   }
 `;
 
@@ -32,6 +43,11 @@ const Description = styled.h1`
   font-weight: 400;
   word-wrap: break-word;
   width: 807px;
+
+  @media (max-width: 1280px) {
+    font-size: 32px;
+    width: auto;
+  }
 `;
 
 const WhiteBar = styled.div`
@@ -47,6 +63,11 @@ const CuriositiesContainer = styled.div`
   flex-wrap: wrap;
   width: 580px;
   gap: 20px;
+
+  @media (max-width: 1280px) {
+    flex-direction: column;
+    gap: 50px;
+  }
 `;
 
 const Curiosities = styled.div`

@@ -3,6 +3,18 @@ import {
 } from '../Shared';
 import { ResumeLink } from '../ResumeLink';
 import { Skills } from '../Skills';
+import styled from 'styled-components';
+import { useState } from 'react';
+import { useInterval } from 'usehooks-ts';
+import { shuffleArray } from '@/utils/shuffleArray';
+import { SkillContainerProps } from '../Skill';
+
+const HeaderContents = styled.div`
+@media (max-width: 1280px) {
+  display: flex;
+  align-items: center;
+}
+`
 
 export function Resume() {
   const contents = [{
@@ -92,15 +104,26 @@ export function Resume() {
   },
   ];
 
+  /* const [array, setArray] = useState<SkillContainerProps[]>(contents)
+
+  useInterval(() => {
+    if (contents) {
+      const shuffledContents = shuffleArray(contents);
+      setArray(shuffledContents);
+    }
+  }, 3000) */
+
   return (
     <Background text="midnightBlue" color="iceCream">
       <Container id="resume">
-        <PageInfoHeaderContainer>
-          <PageInfoHeaderText>
-            currículo
-          </PageInfoHeaderText>
-        </PageInfoHeaderContainer>
-        <ResumeLink />
+        <HeaderContents>
+          <PageInfoHeaderContainer>
+            <PageInfoHeaderText>
+              currículo
+            </PageInfoHeaderText>
+          </PageInfoHeaderContainer>
+          <ResumeLink />
+        </HeaderContents>
         <Skills contents={contents} />
       </Container>
     </Background>

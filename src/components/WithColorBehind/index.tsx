@@ -11,6 +11,16 @@ const Container = styled.div`
     bottom: -1px;
     width: fit-content;
   }
+
+@media (max-width: 1280px) {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+
+  > a {
+    width: 100%;
+  }
+}
 `;
 
 export function WithColorBehind({ children }: any) {

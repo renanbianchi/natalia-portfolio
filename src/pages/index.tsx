@@ -10,6 +10,10 @@ const HomeContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   margin-bottom: 120px;
+
+@media (max-width: 1280px) {
+  margin-bottom: 0px;
+}
 `;
 
 export default function Home() {

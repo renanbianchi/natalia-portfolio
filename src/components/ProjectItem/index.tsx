@@ -21,10 +21,14 @@ const Container = styled.div`
   gap: 24px;
   width: 100%;
   max-height: 364px;
+
+  @media (max-width: 1280px) {
+    flex-direction: column;
+    max-height: 100%;
+  }
 `;
 
 const ImageContainer = styled.div`
-  height: auto;
   position: relative;
   min-width: 446px;
   height: 364px;
@@ -36,12 +40,24 @@ const ImageContainer = styled.div`
     transition: min-width 2s;
     min-width: 646px;
   }
+
+  @media (max-width: 1280px) {
+    min-width: auto;
+    width: 100%;
+    height: 100%;
+  }
 `;
 
 const IconImage = styled.img`
   left: -110px; 
   position: absolute;
   overflow: hidden;
+  @media (max-width: 1280px) {
+    left: 0px;
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
 `;
 
 const ProjectDetailsContainer = styled.div`
@@ -49,6 +65,9 @@ const ProjectDetailsContainer = styled.div`
   display: flex;
   flex-direction: column;
   width: 550px;
+  @media (max-width: 1280px) {
+    width: auto;
+  }
 `;
 
 const Title = styled.span`
@@ -64,6 +83,10 @@ const SubTitle = styled.h1`
   font-size: 36px;
   text-transform: uppercase;
   margin-bottom: 16px;
+
+  @media (max-width: 1280px) {
+    font-size: 32px;
+  }
 `;
 
 const Description = styled.span`

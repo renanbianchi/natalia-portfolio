@@ -6,6 +6,19 @@ const Hero = styled.h1`
   font-size: 200px;
   color: ${({ theme }) => theme.colors.iceCream};
   width: 1215px;
+
+  > br {
+    display: none;
+  }
+
+  @media (max-width: 1280px) {
+    font-size: 68px;
+    width: 368px;
+    white-space: pre-wrap;
+    > br {
+      display: block;
+    }
+  }
 `;
 
 const OpenDialogsContainer = styled.div`
@@ -14,6 +27,32 @@ const OpenDialogsContainer = styled.div`
   gap: 120px;
   position: relative;
   margin-bottom: 150px;
+
+  @media (max-width: 1280px) {
+    gap: 25px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-bottom: 41px;
+
+
+    span: first-child {
+      order: 1;
+      width: 100%;
+      padding: 0px 100px 0px 0px;
+      white-space: pre-wrap;
+    }
+
+    > img {
+      order: 2;
+      width: 42px;
+    }
+
+    span: nth-child(2) {
+      order: 3;
+    }
+
+   
+  }
 `;
 
 const Dialog = styled.span`
@@ -21,6 +60,11 @@ const Dialog = styled.span`
   font-size: 14px;
   color: ${({ theme }) => theme.colors.iceCream};
   width: 482px;
+
+  @media (max-width: 1280px) {
+    font-size: 12px;
+    width: 70vw;
+  }
 `;
 
 const HeaderContainer = styled.div`
@@ -42,12 +86,22 @@ const PageInfo = styled.span`
   font-family: ${({ theme }) => theme.fonts.bebasneue};
   font-size: 24px;
   color: ${({ theme }) => theme.colors.iceCream};
+
 `;
 
 const Smile = styled.img`
+
   position: absolute;
   bottom: 0px;
   right: 300px;
+
+  @media (max-width: 1280px) {
+    display: flex;
+    position: relative;
+    bottom: 0px;
+    right: 0px;
+
+  }
 `;
 
 export function HeroHome() {
@@ -61,7 +115,7 @@ export function HeroHome() {
         <PageInfo>ux/ui design</PageInfo>
         <GreenBar />
       </HeaderContainer>
-      <Hero>Olá, eu sou a Natalia</Hero>
+      <Hero>Olá, <br />eu sou a Natalia</Hero>
       <OpenDialogsContainer>
         {dialogs.map((dialog) => (
           <Dialog key={dialog.content} dangerouslySetInnerHTML={{ __html: dialog.content }} />

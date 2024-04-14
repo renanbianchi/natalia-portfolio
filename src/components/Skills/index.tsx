@@ -8,6 +8,10 @@ const Container = styled.div`
   flex-direction: row;
   flex-wrap: wrap;
 
+  @media (max-width: 1280px) {
+    margin-top: 24px;
+    margin-bottom: 70px;
+  }
 `;
 
 const SkillsContainer = styled.div`
@@ -16,6 +20,14 @@ const SkillsContainer = styled.div`
   gap: 19px;
   flex-wrap: wrap;
   justify-content: center;
+
+  @media (max-width: 1280px) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+  }
+
 `;
 
 export function Skills({ contents } : {contents: SkillContainerProps[]}) {
@@ -26,7 +38,7 @@ export function Skills({ contents } : {contents: SkillContainerProps[]}) {
           image, alt, bgColor, title, subtitle, description, width,
         }) => (
           <Skill
-            key={title}
+            key={title || image}
             image={image}
             alt={alt}
             bgColor={bgColor}

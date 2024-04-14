@@ -2,26 +2,41 @@ import styled from 'styled-components';
 import { Container } from '../Shared';
 import { WithColorBehind } from '../WithColorBehind';
 
-const ContentContainer = styled.div`
-  margin-top: -55px;
-  display: flex;
+const ContentContainer = styled(Container)`
+  flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 61px;
-  z-index: 2;
-  overflow-x: visible;
+  margin-bottom: 64px;
+  background-color: transparent;
+  overflow: hidden;
+  background: none;
+  height: auto;
+
+@media (max-width: 1280px) {
+  margin-top: 48px;
+}
 `;
 
 const ContactContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 24px;
+  height: auto;
+
+@media (max-width: 1280px) {
+  gap: 64px;
+}
 `;
 
 const Header = styled.h1`
   font-family: ${({ theme }) => theme.fonts.bebasneue};
   font-size: 48px;
   font-weight: 400;
+
+@media (max-width: 1280px) {
+  font-size: 24px;
+  color: ${({theme}) => theme.colors.iceCream};
+}
 `;
 
 const Content = styled.a`
@@ -32,23 +47,21 @@ const Content = styled.a`
 `;
 
 /* const Background = styled.div`
-  background: rgb(139,118,255);
   background: radial-gradient(circle, rgba(139,118,255,1) 0%, rgba(16,23,32,1) 37%); 
   filter: blur(400px);
-  border: 1px solid red;
-  width: 50%;
-  height: 200px;
+  width: 100%;
   position: absolute;
   right: 0px;
-  margin-right: -10px;
-  overflow: hidden;
-  overflow-clip-box: padding-box;
+  overflow-x: hidden;
+  z-index: -5;
+  border: 1px solid red;
 `;
- */
+  */
+
 export function Footer() {
   return (
-    <Container>
-      <ContentContainer>
+
+    <ContentContainer>
         <ContactContainer>
           <Header>
             vamos criar juntos?
@@ -70,6 +83,6 @@ export function Footer() {
         </ContactContainer>
         <img width={48} src="/icons/smile.svg" alt="smile icon" />
       </ContentContainer>
-    </Container>
+
   );
 }

@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import {
   Background,
-  Container, PageInfoHeaderContainer, PageInfoHeaderText,
+  Container, PageInfoHeaderContainer, PageInfoHeaderText, GreenBar
 } from '../Shared';
 import { ProjectItem } from '../ProjectItem';
 
@@ -10,6 +10,10 @@ const ProjectsContainer = styled.div`
   flex-direction: column;
   padding: 140px;
   gap: 140px;
+  @media (max-width: 1280px) {
+    padding: 0px;
+    gap: 70px;
+  }
 `;
 
 export function Projects() {
@@ -38,6 +42,7 @@ export function Projects() {
     <Background text="midnightBlue" color="iceCream">
       <Container id="projects">
         <PageInfoHeaderContainer>
+          <GreenBar />
           <PageInfoHeaderText>
             projetos
           </PageInfoHeaderText>

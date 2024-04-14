@@ -29,7 +29,22 @@ const Container = styled.div<{bgColor: string}>`
   border: 1px solid ${({ theme }) => theme.colors.midnightBlue};
   padding: 8px 54px;
   background-color: ${({ bgColor, theme }) => (bgColor || theme.colors.iceCream)};
-  border-radius: 100px;;
+  border-radius: 100px;
+  width: fit-content;
+  transition: width 0.5s ease;
+
+
+  @media (max-width: 1280px) {
+    padding: 4px 18px;
+    min-width: auto;
+    border-radius: 48px;
+    min-height: 100px;
+    gap: 12px;
+
+    > img {
+      max-width: 33px;
+    }
+  }
 `;
 
 const ContentContainer = styled.div`
@@ -37,6 +52,11 @@ const ContentContainer = styled.div`
   flex-direction: column;
   align-items: center;
   width: 100%;
+
+@media (max-width: 1280px) {
+  max-width: 328px;
+  max-height: 100px;
+}
 `;
 
 const Title = styled.h2`
@@ -56,6 +76,11 @@ const Description = styled.span`
   font-size: 12px;
   font-weight: 400;
   max-width: 360px;
+
+  @media (max-width: 1280px) {
+    width: 100%;
+    text-align: center;
+  }
 `;
 
 export function Skill({
