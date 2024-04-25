@@ -5,6 +5,8 @@ import {
 } from '../Shared';
 import { ProjectItem } from '../ProjectItem';
 
+
+
 const ProjectsContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -22,7 +24,7 @@ export function Projects() {
     alt: 'imagem adota+',
     title: 'adota +',
     subtitle: 'uma solução digital para ajudar na adoção de animais resgatados por ongs',
-    description: 'A proposta deste projeto é criar uma solução digital fictícia para a ajudar a doação de animais resgatados por ONGs. O principal desafio foi criar uma solução para este problema em apenas uma semana, com o embasamento necessário, além de prototipar e testar a proposta',
+    description: 'A proposta deste projeto é criar uma solução digital fictícia para a ajudar a doação de animais resgatados por ONGs. O principal desafio foi criar uma <b>solução para este problema em apenas uma semana</b>, com o embasamento necessário, além de prototipar e testar a proposta',
     tags: ['ux', 'ui', 'figma', 'web'],
     to: '/projects/adota-mais',
     disabled: true,
