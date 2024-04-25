@@ -1,6 +1,7 @@
 /* eslint-disable react/no-array-index-key */
 import styled from 'styled-components';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import { WithColorBehind } from '../WithColorBehind';
 
 interface ProjectItemProps {
   project: {
@@ -15,6 +16,22 @@ interface ProjectItemProps {
   }
 }
 
+
+const ImageContainer = styled.div`
+  position: relative;
+  min-width: 446px;
+  height: 364px;
+  transition: min-width 2s;
+  overflow: hidden;
+  border-radius: 24px;
+
+  @media (max-width: 1280px) {
+    min-width: auto;
+    width: 100%;
+    height: 100%;
+  }
+`;
+
 const Container = styled.div`
   display: flex;
   justify-content: space-evenly;
@@ -26,25 +43,12 @@ const Container = styled.div`
     flex-direction: column;
     max-height: 100%;
   }
-`;
-
-const ImageContainer = styled.div`
-  position: relative;
-  min-width: 446px;
-  height: 364px;
-  transition: min-width 2s;
-  overflow: hidden;
-  border-radius: 24px;
 
   &:hover {
-    transition: min-width 2s;
-    min-width: 646px;
-  }
-
-  @media (max-width: 1280px) {
-    min-width: auto;
-    width: 100%;
-    height: 100%;
+    ${ImageContainer} {
+      transition: min-width 2s;
+      min-width: 646px;
+    }
   }
 `;
 
@@ -83,6 +87,8 @@ const SubTitle = styled.h1`
   font-size: 36px;
   text-transform: uppercase;
   margin-bottom: 16px;
+  width: 509px;
+
 
   @media (max-width: 1280px) {
     font-size: 32px;
@@ -94,6 +100,7 @@ const Description = styled.span`
   font-size: 14px;
   color: ${({ theme }) => theme.colors.gray};
   margin-bottom: 20px;
+  width: 509px;
 `;
 
 const TagsContainer = styled.div`
@@ -141,9 +148,7 @@ export function ProjectItem({
         <SubTitle>
           {project.subtitle}
         </SubTitle>
-        <Description>
-          {project.description}
-        </Description>
+        <Description dangerouslySetInnerHTML={{__html: project.description}} />
         <TagsContainer>
           {project.tags.map((tag, i) => <Tag key={i}>{tag}</Tag>)}
         </TagsContainer>
