@@ -18,12 +18,14 @@ const ContentContainer = styled(Container)`
 `;
 
 const ContactContainer = styled.div`
+  max-width: 100%;
   display: flex;
   flex-direction: column;
   gap: 24px;
   height: auto;
 
 @media (max-width: 1280px) {
+  max-width: 200px;
   gap: 64px;
 }
 `;
@@ -69,14 +71,14 @@ export function Footer() {
             {' '}
             entre em contato
           </Header>
-          <WithColorBehind>
-            <Content href='mailto:natalia.lia15@gmail.com'>
+          <WithColorBehind color="violet" >
+            <Content target="_blank" href='mailto:natalia.lia15@gmail.com'>
               Email: natalia.lia15@gmail.com
               <br />
             </Content>
           </WithColorBehind>
-          <WithColorBehind>
-            <Content href='https://www.linkedin.com/in/nataliafernandesaraujo/'>
+          <WithColorBehind color="violet">
+            <Content target="_blank" href='https://www.linkedin.com/in/nataliafernandesaraujo/'>
               Linkedin/in/nataliafernandesaraujo
             </Content>
           </WithColorBehind>
