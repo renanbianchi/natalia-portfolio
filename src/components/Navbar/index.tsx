@@ -35,10 +35,8 @@ const NavBarContainer = styled.div<{visible: boolean, menuOpen: boolean}>`
   }
 `;
 
-
-
-
 const NavigateButton = styled.button`
+  margin-bottom: -1px;
   border: none;
   background-color: transparent;
   cursor: pointer;
@@ -48,7 +46,6 @@ const NavigateButton = styled.button`
   color: ${({ theme }) => theme.colors.iceCream};
   text-decoration: none;
   
-
   @media (max-width: 1280px) {
     font-size: 32px;
   }
@@ -81,6 +78,7 @@ const LinksContainer = styled.div<{menuOpen: boolean}>`
 
 const LinkButton = styled.a`
   display: flex;
+  margin-bottom: -1px;
   gap: 8px;
   font-family: ${({ theme }) => theme.fonts.bebasneue};
   font-size: 20px;
@@ -88,6 +86,9 @@ const LinkButton = styled.a`
 `;
 
 const Button = styled.button`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border: none;
   background-color: transparent;
   cursor: pointer;
@@ -137,8 +138,6 @@ export function NavBar() {
     };
   }, [prevScrollPos, menuOpen]);
 
-
-
   return (
     <NavBarContainer menuOpen={menuOpen} visible={visible} id='navbar'>
       <Button onClick={() => {
@@ -167,11 +166,11 @@ export function NavBar() {
         ))}
       </OptionsContainer>
       <LinksContainer menuOpen={menuOpen}>
-        <LinkButton href='mailto:natalia.lia15@gmail.com'>
+        <LinkButton target="_blank" href='mailto:natalia.lia15@gmail.com'>
           <MailOutlineIcon />
           email
         </LinkButton>
-        <LinkButton href='https://www.linkedin.com/in/nataliafernandesaraujo/'>
+        <LinkButton target="_blank" href='https://www.linkedin.com/in/nataliafernandesaraujo/'>
           <LinkedInIcon />
           linkedin
         </LinkButton>
