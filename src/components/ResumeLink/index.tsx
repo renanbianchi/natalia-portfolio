@@ -27,7 +27,7 @@ const Container = styled.div`
 export function ResumeLink() {
   return (
     <Container >
-      <a href="/documents/resume.pdf">
+      <a target="_blank" href="/documents/resume.pdf">
         <img src="/icons/arrow_forward.svg" alt="arrow" />
       </a>
     </Container>
