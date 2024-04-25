@@ -8,7 +8,7 @@ import { Container } from '../Shared';
 const ContentContainer = styled.div<{reversed?: boolean}>`
   display: flex;
   justify-content: ${({ reversed }) => (reversed ? 'center' : '')};
-  align-items: flex-start;
+  align-items: ${({reversed}) => reversed ? `flex-start` : `center`};
   margin-top: 79px;
   margin-bottom: 140px;
   gap: 113px;
