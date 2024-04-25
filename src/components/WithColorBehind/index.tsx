@@ -1,32 +1,35 @@
 import styled from 'styled-components';
+import theme from '../../../public/theme';
+import { ColorLensTwoTone } from '@mui/icons-material';
 
-const Container = styled.div`
-  position: relative;
-  height: 8px;
-  background-color: ${({ theme }) => theme.colors.violet};
-  width: auto;
-
-  > a {
-    position: absolute;
-    bottom: -1px;
-    width: fit-content;
-  }
-
-@media (max-width: 1280px) {
-  display: flex;
-  flex-wrap: wrap;
-  width: 100%;
-
-  > a {
-    width: 100%;
-  }
+type WithColorBehindProps = {
+  color: keyof typeof theme.colors,
+  children: any
 }
+
+const Container = styled.div<{color: keyof typeof theme.colors}>`
+  position: relative;
+  bottom: 5px;
+  height: 8px;
+  background-color: ${({ color }) => theme.colors[color] || { color }};
+  width: 100%;
 `;
 
-export function WithColorBehind({ children }: any) {
+const ChildrenContainer = styled.div`
+  width: fit-content;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+`;
+
+export function WithColorBehind({ children, color }: WithColorBehindProps) {
   return (
-    <Container>
+    <Container color={color}>
+      <ChildrenContainer>
       {children}
+      </ChildrenContainer>
     </Container>
   );
 }
