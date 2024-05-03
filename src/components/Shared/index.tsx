@@ -8,14 +8,14 @@ export const Container = styled.div`
 
   @media (max-width: 1280px) {
     padding: 0 17px;
-    width: 100vw;
+    width: 100%;
     overflow-x: hidden
   }
 `;
 
 export const Background = styled.div<{ color: keyof typeof theme.colors; text: keyof typeof theme.colors }>`
   background-color: ${({ color }) => theme.colors[color] || { color }};
-  color: ${({ text }) => theme.colors[text]}
+  color: ${({ text }) => theme.colors[text]};
 `;
 
 export const PageInfoHeaderContainer = styled.div`

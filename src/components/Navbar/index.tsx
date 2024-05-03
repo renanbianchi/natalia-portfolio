@@ -19,7 +19,7 @@ const NavBarContainer = styled.div<{visible: boolean, menuOpen: boolean}>`
   padding: 8px 60px;
   z-index: 9999 !important;
   overflow-y: hidden;
-  transition: all 0.3s ease-in-out;
+  transition: top 0.3s ease-in-out;
   top: ${({visible}) => visible ? '0' : '-70px'};
 
   @media (max-width: 1280px) {
@@ -92,6 +92,11 @@ const Button = styled.button`
   border: none;
   background-color: transparent;
   cursor: pointer;
+
+  @media (max-width: 1280px) { 
+    padding-top: 2px;
+  }
+
 `
 const BurgerMenuContainer = styled.button<{menuOpen: boolean}>`
   display: none;

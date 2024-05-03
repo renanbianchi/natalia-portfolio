@@ -92,6 +92,7 @@ const SubTitle = styled.h1`
 
   @media (max-width: 1280px) {
     font-size: 32px;
+    width: 100%;
   }
 `;
 
@@ -101,6 +102,10 @@ const Description = styled.span`
   color: ${({ theme }) => theme.colors.gray};
   margin-bottom: 20px;
   width: 509px;
+  
+  @media (max-width: 1280px) {
+    width: 100%;
+  }
 `;
 
 const TagsContainer = styled.div`
