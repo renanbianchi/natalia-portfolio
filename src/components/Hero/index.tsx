@@ -1,5 +1,6 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { Container } from '../Shared';
+
 
 const Hero = styled.h1`
   font-family: ${({ theme }) => theme.fonts.boldfont};
@@ -20,6 +21,41 @@ const Hero = styled.h1`
     }
   }
 `;
+
+
+const Animation = keyframes`
+   0% {
+    transform: rotate(0deg);
+    opacity: 0;
+  }
+  100% {
+    transform: rotate(-173.32deg);
+    opacity: 1;
+  }
+`;
+
+
+const HeroContainer = styled(Container)`
+  background-color: transparent;
+  position: relative;
+  overflow: hidden;
+`;
+
+const GradientLight = styled.img`
+  position: absolute;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  filter: blur(300px);
+  animation: ${Animation} 6s infinite alternate;
+
+  @media (max-width: 1280px) {
+    left: 10rem;
+  }
+`
+
 
 const OpenDialogsContainer = styled.div`
   margin-top: 133px;
@@ -50,8 +86,6 @@ const OpenDialogsContainer = styled.div`
     span: nth-child(2) {
       order: 3;
     }
-
-   
   }
 `;
 
@@ -90,7 +124,6 @@ const PageInfo = styled.span`
 `;
 
 const Smile = styled.img`
-
   position: absolute;
   bottom: 0px;
   right: 300px;
@@ -110,7 +143,8 @@ export function HeroHome() {
     { content: 'Se precisar de uma <b>product designer</b>, ou mesmo apenas para conversar sobre design, arte, tecnologia, filmes e músicas, entre em contato comigo.' },
   ];
   return (
-    <Container id="home">
+    <HeroContainer id="home">
+      <GradientLight src={`/images/spotLight.svg`} />
       <HeaderContainer>
         <PageInfo>ux/ui design</PageInfo>
         <GreenBar />
@@ -122,6 +156,8 @@ export function HeroHome() {
         ))}
         <Smile src="/icons/smile.svg" />
       </OpenDialogsContainer>
-    </Container>
+
+    </HeroContainer>
+    
   );
 }
