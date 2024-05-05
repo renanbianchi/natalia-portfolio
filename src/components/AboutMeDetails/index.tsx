@@ -6,6 +6,7 @@ import {
 import { Container, Ellipsis } from '../Shared';
 
 const ContentContainer = styled.div<{reversed?: boolean}>`
+
   display: flex;
   justify-content: ${({ reversed }) => (reversed ? 'center' : '')};
   align-items: ${({reversed}) => reversed ? `flex-start` : `center`};
@@ -24,7 +25,6 @@ const ContentContainer = styled.div<{reversed?: boolean}>`
 const PictureContainer = styled.div<{reversed?: boolean}>`
   position: relative;
   width: fit-content;
-  z-index: 999;
 
   > img {
     border-top-left-radius: ${({ reversed }) => (reversed ? '' : '250px')};
@@ -56,14 +56,6 @@ const Description = styled.h1`
     width: auto;
   }
 `;
-
-/* const Ellipsis = styled.img<{reversed?: boolean}>`
-  background-image: url('/images/noise.png');
-  position: absolute;
-  bottom: -377px;
-  left: ${({reversed}) => reversed ? `-107px` : `-200px`} ;
-  filter: blur(400px);
-` */
 
 const WhiteBar = styled.div`
   width: 100%;
