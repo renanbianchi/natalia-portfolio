@@ -1,10 +1,11 @@
 import styled from 'styled-components';
 import theme from '../../../public/theme';
 
-export const Container = styled.div`
+export const Container = styled.div<{noise?: boolean}>`
   display: flex;
   flex-direction: column;
   padding: 0 210px;
+  background-image: ${({noise}) => noise ? `url('/images/noise.png')` : '' };
 
   @media (max-width: 1280px) {
     padding: 0 17px;
@@ -49,3 +50,13 @@ export const PageInfoHeaderText = styled.h1`
     font-size: 48px;
   }
 `;
+
+export const Ellipsis = styled.img<{top?: string, left?: string, right?: string, bottom?: string}>`
+  background-image: url('/images/noise.png');
+  position: absolute;
+  top: ${({top}) => top ? top : 'auto'};
+  bottom: ${({bottom}) => bottom ? bottom : 'auto'};
+  left: ${({left}) => left ? left : 'auto'};
+  right: ${({right}) => right ? right : 'auto'};
+  filter: blur(400px);
+`
