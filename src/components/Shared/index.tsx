@@ -6,11 +6,11 @@ export const Container = styled.div<{noise?: boolean}>`
   flex-direction: column;
   padding: 0 210px;
   background-image: ${({noise}) => noise ? `url('/images/noise.png')` : '' };
+  overflow: hidden;
 
   @media (max-width: 1280px) {
     padding: 0 17px;
     width: 100%;
-    overflow-x: hidden
   }
 `;
 
