@@ -14,6 +14,7 @@ const Container = styled.div`
   width: 100%;
   overflow: hidden;
   margin-top: -27px;
+  margin-bottom: -9.5px;
   user-select: none;
 `;
 
