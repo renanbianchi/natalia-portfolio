@@ -39,6 +39,7 @@ const HeroContainer = styled(Container)`
   background-color: transparent;
   position: relative;
   overflow: hidden;
+  background-image: url('/images/noise.png');
 `;
 
 const GradientLight = styled.img`
@@ -145,17 +146,18 @@ export function HeroHome() {
   return (
     <HeroContainer id="home">
       <GradientLight src={`/images/spotLight.svg`} />
-      <HeaderContainer>
-        <PageInfo>ux/ui design</PageInfo>
-        <GreenBar />
-      </HeaderContainer>
-      <Hero>Olá, <br />eu sou a Natalia</Hero>
-      <OpenDialogsContainer>
-        {dialogs.map((dialog) => (
-          <Dialog key={dialog.content} dangerouslySetInnerHTML={{ __html: dialog.content }} />
-        ))}
-        <Smile src="/icons/smile.svg" />
-      </OpenDialogsContainer>
+
+        <HeaderContainer>
+          <PageInfo>ux/ui design</PageInfo>
+          <GreenBar />
+        </HeaderContainer>
+        <Hero>Olá, <br />eu sou a Natalia</Hero>
+        <OpenDialogsContainer>
+          {dialogs.map((dialog) => (
+            <Dialog key={dialog.content} dangerouslySetInnerHTML={{ __html: dialog.content }} />
+          ))}
+          <Smile src="/icons/smile.svg" />
+        </OpenDialogsContainer>
 
     </HeroContainer>
     

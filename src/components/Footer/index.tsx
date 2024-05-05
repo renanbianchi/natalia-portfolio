@@ -1,19 +1,21 @@
 import styled from 'styled-components';
-import { Container } from '../Shared';
+import { Container, Ellipsis } from '../Shared';
 import { WithColorBehind } from '../WithColorBehind';
 
 const ContentContainer = styled(Container)`
+  position: relative;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 64px;
   background-color: transparent;
   overflow: hidden;
   background: none;
   height: auto;
+  padding-top: 120px;
+  padding-bottom: 64px;
 
 @media (max-width: 1280px) {
-  margin-top: 48px;
+  padding-top: 48px;
 }
 `;
 
@@ -48,18 +50,6 @@ const Content = styled.a`
   font-weight: 500;
 `;
 
-/* const Background = styled.div`
-  background: radial-gradient(circle, rgba(139,118,255,1) 0%, rgba(16,23,32,1) 37%); 
-  filter: blur(400px);
-  width: 100%;
-  position: absolute;
-  right: 0px;
-  overflow-x: hidden;
-  z-index: -5;
-  border: 1px solid red;
-`;
-  */
-
 export function Footer() {
   return (
 
@@ -84,6 +74,7 @@ export function Footer() {
           </WithColorBehind>
         </ContactContainer>
         <img width={48} src="/icons/smile.svg" alt="smile icon" />
+        <Ellipsis width={374} right='0px' src="/images/elipse-blur-about-me.svg" alt="Ellipsis" />
       </ContentContainer>
 
   );

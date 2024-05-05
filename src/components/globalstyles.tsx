@@ -5,6 +5,8 @@ const GlobalStyle = createGlobalStyle`
   body {
     min-height: 100vh;
     background-color: ${({ theme }) => theme.colors.midnightBlue};
+    background-image: url('/images/noise.png');
+
     color: ${({ theme }) => theme.colors.iceCream};
     scroll-behavior: smooth;
     padding: 0;
@@ -12,6 +14,7 @@ const GlobalStyle = createGlobalStyle`
     font-family: ${({ theme }) => theme.fonts.poppins},
       -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
       Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    overflow-x: hidden;
   }
   a {
     color: inherit;

@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import {
   PiCat, PiGlobeHemisphereWest, PiMusicNotes, PiAlien,
 } from 'react-icons/pi';
-import { Container } from '../Shared';
+import { Container, Ellipsis } from '../Shared';
 
 const ContentContainer = styled.div<{reversed?: boolean}>`
   display: flex;
@@ -22,6 +22,7 @@ const ContentContainer = styled.div<{reversed?: boolean}>`
 `;
 
 const PictureContainer = styled.div<{reversed?: boolean}>`
+  position: relative;
   width: fit-content;
   z-index: 999;
 
@@ -33,8 +34,14 @@ const PictureContainer = styled.div<{reversed?: boolean}>`
 
     @media (max-width: 1280px) {
     width: 100%;
-    }
-  }
+    };
+
+  };
+
+  > img:first-child {
+    z-index: 3 !important;
+    position: sticky;
+  };
 `;
 
 const Description = styled.h1`
@@ -49,6 +56,14 @@ const Description = styled.h1`
     width: auto;
   }
 `;
+
+/* const Ellipsis = styled.img<{reversed?: boolean}>`
+  background-image: url('/images/noise.png');
+  position: absolute;
+  bottom: -377px;
+  left: ${({reversed}) => reversed ? `-107px` : `-200px`} ;
+  filter: blur(400px);
+` */
 
 const WhiteBar = styled.div`
   width: 100%;
@@ -87,10 +102,12 @@ const Curiosities = styled.div`
 
 export function AboutMeDetails() {
   return (
-    <Container>
+    <Container noise>
       <ContentContainer>
         <PictureContainer>
           <img src="/images/natalia1.png" alt="Natalia 1" />
+          <Ellipsis bottom='-377px' left='-200px' src="/images/elipse-blur-about-me.svg" alt="Ellipsis" />
+
         </PictureContainer>
         <Description>
           Product Designer, graduada em Design e em arquitetura, me encontrei na
@@ -138,6 +155,8 @@ export function AboutMeDetails() {
         </CuriositiesContainer>
         <PictureContainer reversed>
           <img src="/images/natalia2.png" alt="Natalia 2" />
+          <Ellipsis width='800px' bottom='-213px' left='-11px' src="/images/elipse-blur-about-me.svg" alt="Ellipsis" />
+
         </PictureContainer>
       </ContentContainer>
     </Container>
