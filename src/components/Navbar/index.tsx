@@ -5,6 +5,8 @@ import styled, { css, keyframes } from 'styled-components';
 import React, { useEffect, useState } from 'react';
 import MenuIcon from '@mui/icons-material/Menu';
 import theme from '../../../public/theme';
+import { useRouter } from 'next/router';
+
 
 const NavBarContainer = styled.div<{visible: boolean, menuOpen: boolean}>`
   display: flex;
@@ -115,6 +117,7 @@ const BurgerMenuContainer = styled.button<{menuOpen: boolean}>`
 `
 
 export function NavBar() {
+  const router = useRouter();
   const options = [
     { name: 'projetos', to: 'projects' },
     { name: 'sobre mim', to: 'about' },
@@ -124,6 +127,17 @@ export function NavBar() {
   const [prevScrollPos, setPrevScrollPos] = useState(0);
   const [visible, setVisible] = useState(true);
   const [menuOpen, setMenuOpen] = useState(false)
+
+  const navigateToHomeAndScroll = async (to?: string) => {
+    if (window.location.pathname !== '/') {
+      await router.push('/');
+    }
+    const home = document.getElementById(to || 'home');
+    if (home) {
+      setMenuOpen(false);
+      home.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   useEffect(() => {
     function handleScroll() {
@@ -145,26 +159,14 @@ export function NavBar() {
 
   return (
     <NavBarContainer menuOpen={menuOpen} visible={visible} id='navbar'>
-      <Button onClick={() => {
-        const home = document.getElementById('home')
-        if (home) {
-          setMenuOpen(false);
-          home.scrollIntoView({behavior: 'smooth'})
-        }
-      }}>
+      <Button onClick={() => navigateToHomeAndScroll}>
       <img width={43.9} height={20} src="/icons/logo.svg" alt="Natalia Logo" />
       </Button>
       <OptionsContainer menuOpen={menuOpen}>
         {options.map((option) => (
           <NavigateButton
             key={option.to}
-            onClick={() => {
-              const targetElement = document.getElementById(option.to);
-              if (targetElement) {
-                setMenuOpen(!menuOpen);
-                targetElement.scrollIntoView({ behavior: 'smooth' });
-              }
-            }}
+            onClick={() => navigateToHomeAndScroll(option.to)}
           >
             {option.name}
           </NavigateButton>
