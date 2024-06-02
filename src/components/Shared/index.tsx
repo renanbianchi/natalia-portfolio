@@ -14,9 +14,9 @@ export const Container = styled.div<{noise?: boolean}>`
   }
 `;
 
-export const Background = styled.div<{ color: keyof typeof theme.colors; text: keyof typeof theme.colors }>`
+export const Background = styled.div<{ color: keyof typeof theme.colors; text?: keyof typeof theme.colors }>`
   background-color: ${({ color }) => theme.colors[color] || { color }};
-  color: ${({ text }) => theme.colors[text]};
+  ${({ text }) => text && `color: ${theme.colors[text]};`}
 `;
 
 export const PageInfoHeaderContainer = styled.div`
