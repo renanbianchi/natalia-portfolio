@@ -37,6 +37,14 @@ const TopicContainer = styled.div<{outwards?: boolean; mt?: number; mb?: number;
     & span {
       width: 577px;
     }
+
+    @media (max-width: 1280px) {
+      flex-direction: column;
+
+      & span {
+        width: 100%;
+      }
+    }  
   `}
 
   ${({outwards}) => 
