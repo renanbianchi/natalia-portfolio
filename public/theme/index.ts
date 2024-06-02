@@ -18,6 +18,8 @@ const theme: DefaultTheme = {
     limeGreen: '#A3FF2D',
     violet: '#8B76FF',
     gray: '#3D4651',
+    slateGray: '#636363',
+    creamyPeach: '#FCEBD3'
   },
   fonts: {
     boldfont: BoldFont.style.fontFamily,

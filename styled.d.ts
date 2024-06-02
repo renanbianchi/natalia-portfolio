@@ -8,6 +8,8 @@ declare module 'styled-components' {
       limeGreen: string
       violet: string
       gray: string
+      slateGray: string
+      creamyPeach: string
     }
     fonts: {
       poppins: string;
