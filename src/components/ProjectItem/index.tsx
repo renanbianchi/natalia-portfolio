@@ -157,8 +157,8 @@ export function ProjectItem({
         <TagsContainer>
           {project.tags.map((tag, i) => <Tag key={i}>{tag}</Tag>)}
         </TagsContainer>
-        <Button disabled={project.disabled} /* href={project.to} */>
-          em breve
+        <Button disabled={project.disabled}  href={project.disabled ? "" : project.to}>
+          {project.disabled ? "Em breve" : "Saiba mais"}
           {!project.disabled && (<ArrowForwardIcon />)}
           
         </Button>

@@ -37,7 +37,7 @@ export function Projects() {
     description: 'O app fictício Recolheita, é um projeto que busca fortalecer os laços entre produtores e consumidores, promovendo uma alimentação mais saudável, sustentável e comunitária.',
     tags: ['ux', 'ui', 'figma', 'miro', 'zoom', 'app'],
     to: '/projects/recolheita',
-    disabled: true,
+    disabled: false,
   },
   ];
   return (
