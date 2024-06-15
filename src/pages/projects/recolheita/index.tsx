@@ -111,7 +111,7 @@ export default function Recolheita() {
       }
     }
   }
-  const {research, interviews, persona, redefining, solution, learnings} = data.contents
+  const {research, interviews, persona, redefining, solution, learnings} = data.contents;
 
   return (
     <Background color="iceCream" text="midnightBlue">
