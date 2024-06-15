@@ -2,14 +2,20 @@
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
 import { ThemeProvider } from 'styled-components';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import theme from '../../public/theme';
 
 import { NavBar } from '@/components/Navbar';
 import { GlobalStyle } from '@/components/globalstyles';
 import { Footer } from '@/components/Footer';
+import Loading from '@/components/Loading';
+import NextTopLoader from 'nextjs-toploader';
+import { useLoading } from '@/utils/useLoading';
 
 export default function App({ Component, pageProps }: AppProps) {
+  /* const loading = useLoading(); */
+  const loading = true;
+
   return (
     <>
       <Head>
@@ -19,9 +25,14 @@ export default function App({ Component, pageProps }: AppProps) {
       </Head>
       <ThemeProvider theme={theme}>
         <GlobalStyle />
-        <NavBar />
-        <Component {...pageProps} />
-        <Footer />
+        {loading ? <Loading /> :
+          <>
+          <NavBar />
+          <NextTopLoader color='#3D4651' />
+          <Component {...pageProps} />
+          <Footer />
+          </>  
+        }
       </ThemeProvider>
     </>
   );
