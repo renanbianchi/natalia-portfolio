@@ -46,7 +46,7 @@ const Container = styled.div`
 
   &:hover {
     ${ImageContainer} {
-      transition: min-width 2s;
+      transition: min-width 1s;
       min-width: 646px;
     }
   }
@@ -56,6 +56,7 @@ const IconImage = styled.img`
   left: -110px; 
   position: absolute;
   overflow: hidden;
+
   @media (max-width: 1280px) {
     left: 0px;
     position: relative;
@@ -69,6 +70,7 @@ const ProjectDetailsContainer = styled.div`
   display: flex;
   flex-direction: column;
   width: 550px;
+
   @media (max-width: 1280px) {
     width: auto;
   }
@@ -88,7 +90,6 @@ const SubTitle = styled.h1`
   text-transform: uppercase;
   margin-bottom: 16px;
   width: 509px;
-
 
   @media (max-width: 1280px) {
     font-size: 32px;

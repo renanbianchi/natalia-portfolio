@@ -19,26 +19,27 @@ const ProjectsContainer = styled.div`
 `;
 
 export function Projects() {
-  const projects = [{
-    img: '/images/adotaplus.png',
-    alt: 'imagem adota+',
-    title: 'adota +',
-    subtitle: 'uma solução digital para ajudar na adoção de animais resgatados por ongs',
-    description: 'A proposta deste projeto é criar uma solução digital fictícia para a ajudar a doação de animais resgatados por ONGs. O principal desafio foi criar uma <b>solução para este problema em apenas uma semana</b>, com o embasamento necessário, além de prototipar e testar a proposta',
-    tags: ['ux', 'ui', 'figma', 'web'],
-    to: '/projects/adota-mais',
-    disabled: true,
-  },
-  {
-    img: '/images/recolheita.png',
-    alt: 'imagem recolheita',
-    title: 'recolheita',
-    subtitle: 'incentivando práticas de consumo sustentável em moradores de centros urbanos',
-    description: 'O app fictício Recolheita, é um projeto que busca fortalecer os laços entre produtores e consumidores, promovendo uma alimentação mais saudável, sustentável e comunitária.',
-    tags: ['ux', 'ui', 'figma', 'miro', 'zoom', 'app'],
-    to: '/projects/recolheita',
-    disabled: false,
-  },
+  const projects = [
+    {
+      img: '/images/recolheita.png',
+      alt: 'imagem recolheita',
+      title: 'recolheita',
+      subtitle: 'incentivando práticas de consumo sustentável em moradores de centros urbanos',
+      description: 'O app fictício Recolheita, é um projeto que busca fortalecer os laços entre produtores e consumidores, promovendo uma alimentação mais saudável, sustentável e comunitária.',
+      tags: ['ux', 'ui', 'figma', 'miro', 'zoom', 'app'],
+      to: '/projects/recolheita',
+      disabled: false,
+    },
+    {
+      img: '/images/adotaplus.png',
+      alt: 'imagem adota+',
+      title: 'adota +',
+      subtitle: 'uma solução digital para ajudar na adoção de animais resgatados por ongs',
+      description: 'A proposta deste projeto é criar uma solução digital fictícia para a ajudar a doação de animais resgatados por ONGs. O principal desafio foi criar uma <b>solução para este problema em apenas uma semana</b>, com o embasamento necessário, além de prototipar e testar a proposta',
+      tags: ['ux', 'ui', 'figma', 'web'],
+      to: '/projects/adota-mais',
+      disabled: true,
+    },
   ];
   return (
     <Background text="midnightBlue" color="iceCream">
