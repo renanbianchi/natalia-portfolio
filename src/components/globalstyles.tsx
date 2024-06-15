@@ -4,6 +4,7 @@ const GlobalStyle = createGlobalStyle`
   html,
   body {
     min-height: 100vh;
+    width: 100vw;
     background-color: ${({ theme }) => theme.colors.midnightBlue};
     background-image: url('/images/noise.png');
 

@@ -50,7 +50,7 @@ const GradientLight = styled.img`
   width: 100%;
   height: 100%;
   filter: blur(300px);
-  animation: ${Animation} 6s infinite alternate;
+  animation: ${Animation} 4s infinite alternate;
 
   @media (max-width: 1280px) {
     left: 10rem;
