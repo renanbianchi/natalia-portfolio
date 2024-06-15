@@ -13,8 +13,8 @@ import NextTopLoader from 'nextjs-toploader';
 import { useLoading } from '@/utils/useLoading';
 
 export default function App({ Component, pageProps }: AppProps) {
-  /* const loading = useLoading(); */
-  const loading = true;
+  const loading = useLoading();
+
 
   return (
     <>
