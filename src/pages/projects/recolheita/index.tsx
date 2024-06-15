@@ -81,7 +81,7 @@ export default function Recolheita() {
       header: "recolheita",
       title: "incentivando práticas de consumo sustentável em moradores de centros urbanos",
       subtitle: "*O projeto foi desenvolvido em grupo durante o bootcamp de UX design da Tera, obtido através de uma seleção de 50 bolsas de estudo oferecidas pelo Santander Universidades.",
-      img: "/images/projects/recolheita/app-image-1.png",
+      img: "/images/projects/recolheita/app-image-1.webp",
       imgAlt: "imagem projeto recolheita no celular"
     },
     contents: {
@@ -125,8 +125,8 @@ export default function Recolheita() {
         <TopicContainer>
           <Topic>{research.title}</Topic>
           <Description dangerouslySetInnerHTML={{__html: research.description}} />
-          <img width={1144} src="/images/projects/recolheita/graph-1.png" alt="Imagem gráfico 01" />
-          <img width={1177} src="/images/projects/recolheita/graph-2.png" alt="Imagem gráfico 02" />
+          <img width={1144} src="/images/projects/recolheita/graph-1.webp" alt="Imagem gráfico 01" />
+          <img width={1177} src="/images/projects/recolheita/graph-2.webp" alt="Imagem gráfico 02" />
         </TopicContainer>
       </ProjectContainer>
       <Background color="creamyPeach" >
@@ -134,7 +134,7 @@ export default function Recolheita() {
           <TopicContainer outwards>
             <Topic>{interviews.title}</Topic>
             <Description dangerouslySetInnerHTML={{__html: interviews.description}} />
-            <img width={1177} src="/images/projects/recolheita/graph-3.png" alt="Imagem gráfico 03" />
+            <img width={1177} src="/images/projects/recolheita/graph-3.webp" alt="Imagem gráfico 03" />
           </TopicContainer>
         </ProjectContainer>        
       </Background>
@@ -142,22 +142,22 @@ export default function Recolheita() {
         <TopicContainer mt={48}> 
           <Topic>{persona.title}</Topic>
             <Description dangerouslySetInnerHTML={{__html: persona.description}} />
-            <img width={1364} src="/images/projects/recolheita/marcelo.png" alt="Imagem dados Marcelo" />
+            <img width={1364} src="/images/projects/recolheita/marcelo.webp" alt="Imagem dados Marcelo" />
         </TopicContainer>
         <TopicContainer horizontal>
           <ContentContainer style={{display: "flex", flexDirection: "column", gap: "12px"}}>
             <Topic>{redefining.title}</Topic>
             <Description dangerouslySetInnerHTML={{__html: redefining.description}} />
           </ContentContainer>
-          <img width={591} src="/images/projects/recolheita/redefining.png" alt="Imagem redefinição do problema" />
+          <img width={591} src="/images/projects/recolheita/redefining.webp" alt="Imagem redefinição do problema" />
         </TopicContainer>
         <TopicContainer mt={48}> 
           <Topic>{solution.title}</Topic>
             <Description dangerouslySetInnerHTML={{__html: solution.description}} />
-            <img width={1425} src="/images/projects/recolheita/recolheita-1.png" alt="Imagem recolheita 1" />
-            <img width={1179} src="/images/projects/recolheita/recolheita-2.png" alt="Imagem recolheita 2" />
-            <img width={1179} src="/images/projects/recolheita/recolheita-3.png" alt="Imagem recolheita 3" />
-            <img width={1206} src="/images/projects/recolheita/recolheita-4.png" alt="Imagem recolheita 4" />
+            <img width={1425} src="/images/projects/recolheita/recolheita-1.webp" alt="Imagem recolheita 1" />
+            <img width={1179} src="/images/projects/recolheita/recolheita-2.webp" alt="Imagem recolheita 2" />
+            <img width={1179} src="/images/projects/recolheita/recolheita-3.webp" alt="Imagem recolheita 3" />
+            <img width={1206} src="/images/projects/recolheita/recolheita-4.webp" alt="Imagem recolheita 4" />
         </TopicContainer>
         <TopicContainer> 
           <Topic>{learnings.title}</Topic>

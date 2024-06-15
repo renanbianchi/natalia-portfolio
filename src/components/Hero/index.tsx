@@ -1,5 +1,6 @@
 import styled, { keyframes } from 'styled-components';
 import { Container } from '../Shared';
+import Image from 'next/image';
 
 
 const Hero = styled.h1`
@@ -39,7 +40,7 @@ const HeroContainer = styled(Container)`
   background-color: transparent;
   position: relative;
   overflow: hidden;
-  background-image: url('/images/noise.png');
+  background-image: url('/images/noise.webp');
 `;
 
 const GradientLight = styled.img`
@@ -124,10 +125,12 @@ const PageInfo = styled.span`
 
 `;
 
-const Smile = styled.img`
+const Smile = styled(Image)`
   position: absolute;
   bottom: 0px;
   right: 300px;
+  width: 48px;
+  height: 48px;
 
   @media (max-width: 1280px) {
     display: flex;
@@ -156,7 +159,7 @@ export function HeroHome() {
           {dialogs.map((dialog) => (
             <Dialog key={dialog.content} dangerouslySetInnerHTML={{ __html: dialog.content }} />
           ))}
-          <Smile src="/icons/smile.svg" />
+          <Smile width={48} height={48} src="/icons/smile.svg" alt="ícone smile" />
         </OpenDialogsContainer>
 
     </HeroContainer>

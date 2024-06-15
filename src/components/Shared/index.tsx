@@ -5,7 +5,7 @@ export const Container = styled.div<{noise?: boolean}>`
   display: flex;
   flex-direction: column;
   padding: 0 210px;
-  background-image: ${({noise}) => noise ? `url('/images/noise.png')` : '' };
+  background-image: ${({noise}) => noise ? `url('/images/noise.webp')` : '' };
   overflow: hidden;
 
   @media (max-width: 1280px) {
@@ -52,7 +52,7 @@ export const PageInfoHeaderText = styled.h1`
 `;
 
 export const Ellipsis = styled.img<{top?: string, left?: string, right?: string, bottom?: string}>`
-  background-image: url('/images/noise.png');
+  background-image: url('/images/noise.webp');
   position: absolute;
   top: ${({top}) => top ? top : 'auto'};
   bottom: ${({bottom}) => bottom ? bottom : 'auto'};

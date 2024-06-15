@@ -1,7 +1,7 @@
 /* eslint-disable react/no-array-index-key */
 import styled from 'styled-components';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
-import { WithColorBehind } from '../WithColorBehind';
+import Image from 'next/image';
 
 interface ProjectItemProps {
   project: {

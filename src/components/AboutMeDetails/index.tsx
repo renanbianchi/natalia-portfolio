@@ -97,7 +97,7 @@ export function AboutMeDetails() {
     <Container noise>
       <ContentContainer>
         <PictureContainer>
-          <img src="/images/natalia1.png" alt="Natalia 1" />
+          <img src="/images/natalia1.webp" alt="Natalia 1" />
           <Ellipsis bottom='-377px' left='-200px' src="/images/elipse-blur-about-me.svg" alt="Ellipsis" />
 
         </PictureContainer>
@@ -146,7 +146,7 @@ export function AboutMeDetails() {
           </Curiosities>
         </CuriositiesContainer>
         <PictureContainer reversed>
-          <img src="/images/natalia2.png" alt="Natalia 2" />
+          <img src="/images/natalia2.webp" alt="Natalia 2" />
           <Ellipsis width='800px' bottom='-213px' left='-11px' src="/images/elipse-blur-about-me.svg" alt="Ellipsis" />
 
         </PictureContainer>

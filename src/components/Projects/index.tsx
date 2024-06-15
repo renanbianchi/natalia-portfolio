@@ -21,7 +21,7 @@ const ProjectsContainer = styled.div`
 export function Projects() {
   const projects = [
     {
-      img: '/images/recolheita.png',
+      img: '/images/recolheita.webp',
       alt: 'imagem recolheita',
       title: 'recolheita',
       subtitle: 'incentivando práticas de consumo sustentável em moradores de centros urbanos',
@@ -31,7 +31,7 @@ export function Projects() {
       disabled: false,
     },
     {
-      img: '/images/adotaplus.png',
+      img: '/images/adotaplus.webp',
       alt: 'imagem adota+',
       title: 'adota +',
       subtitle: 'uma solução digital para ajudar na adoção de animais resgatados por ongs',

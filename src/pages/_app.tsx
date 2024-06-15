@@ -14,8 +14,7 @@ import { useLoading } from '@/utils/useLoading';
 
 export default function App({ Component, pageProps }: AppProps) {
   const loading = useLoading();
-
-
+  
   return (
     <>
       <Head>

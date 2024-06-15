@@ -6,7 +6,7 @@ const GlobalStyle = createGlobalStyle`
     min-height: 100vh;
     width: 100vw;
     background-color: ${({ theme }) => theme.colors.midnightBlue};
-    background-image: url('/images/noise.png');
+    background-image: url('/images/noise.webp');
 
     color: ${({ theme }) => theme.colors.iceCream};
     scroll-behavior: smooth;
