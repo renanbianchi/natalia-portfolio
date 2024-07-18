@@ -94,11 +94,11 @@ const Curiosities = styled.div`
 
 export function AboutMeDetails() {
   return (
-    <Container noise>
+    <Container $noise>
       <ContentContainer>
         <PictureContainer>
           <img src="/images/natalia1.webp" alt="Natalia 1" />
-          <Ellipsis bottom='-377px' left='-200px' src="/images/elipse-blur-about-me.svg" alt="Ellipsis" />
+          <Ellipsis $bottom='-377px' $left='-200px' src="/images/elipse-blur-about-me.svg" alt="Ellipsis" />
 
         </PictureContainer>
         <Description>
@@ -147,7 +147,7 @@ export function AboutMeDetails() {
         </CuriositiesContainer>
         <PictureContainer reversed>
           <img src="/images/natalia2.webp" alt="Natalia 2" />
-          <Ellipsis width='800px' bottom='-213px' left='-11px' src="/images/elipse-blur-about-me.svg" alt="Ellipsis" />
+          <Ellipsis width='800px' $bottom='-213px' $left='-11px' src="/images/elipse-blur-about-me.svg" alt="Ellipsis" />
 
         </PictureContainer>
       </ContentContainer>

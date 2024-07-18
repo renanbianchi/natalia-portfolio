@@ -1,7 +1,7 @@
 /* eslint-disable react/no-array-index-key */
-import styled from 'styled-components';
-import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
-import Image from 'next/image';
+import styled from "styled-components";
+import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
+import Link from "next/link";
 
 interface ProjectItemProps {
   project: {
@@ -13,17 +13,21 @@ interface ProjectItemProps {
     tags: string[];
     to: string;
     disabled: boolean;
-  }
+  };
 }
 
-
-const ImageContainer = styled.div`
+const ImageContainer = styled.div<{ $img: string; alt: string }>`
   position: relative;
-  min-width: 446px;
+  min-width: 546px;
   height: 364px;
-  transition: min-width 2s;
+  transition: all 1s ease-in-out;
+
   overflow: hidden;
   border-radius: 24px;
+  background-image: ${({ $img }) => `url(${$img})`};
+  background-size: auto;
+  background-repeat: no-repeat;
+  background-position: top;
 
   @media (max-width: 1280px) {
     min-width: auto;
@@ -33,6 +37,10 @@ const ImageContainer = styled.div`
 `;
 
 const Container = styled.div`
+  width: 100%;
+`;
+
+const LinkWrapper = styled.div`
   display: flex;
   justify-content: space-evenly;
   gap: 24px;
@@ -46,14 +54,14 @@ const Container = styled.div`
 
   &:hover {
     ${ImageContainer} {
-      transition: min-width 1s;
+      transition: all 1s ease-in-out;
       min-width: 646px;
     }
   }
 `;
 
 const IconImage = styled.img`
-  left: -110px; 
+  left: -110px;
   position: absolute;
   overflow: hidden;
 
@@ -103,7 +111,7 @@ const Description = styled.span`
   color: ${({ theme }) => theme.colors.gray};
   margin-bottom: 20px;
   width: 509px;
-  
+
   @media (max-width: 1280px) {
     width: 100%;
   }
@@ -124,46 +132,63 @@ const Tag = styled.span`
   border-radius: 12px;
 `;
 
-const Button = styled.a<{disabled?: boolean}>`
+const Button = styled.div<{ disabled?: boolean }>`
   display: flex;
   gap: 4px;
   text-decoration: none;
-  background-color: ${({ theme, disabled }) => disabled ? theme.colors.gray : theme.colors.midnightBlue};
+  background-color: ${({ theme, disabled }) => (disabled ? theme.colors.gray : theme.colors.midnightBlue)};
   color: ${({ theme }) => theme.colors.iceCream};
   font-family: ${({ theme }) => theme.fonts.poppins};
   font-size: 14px;
   align-items: center;
   border-radius: 50px;
   width: fit-content;
-  padding: 8px 12px; 
-  cursor: ${({disabled}) => disabled ? `not-allowed` : `pointer`} ;
+  padding: 8px 12px;
+  cursor: ${({ disabled }) => (disabled ? `not-allowed` : `pointer`)};
 `;
 
-export function ProjectItem({
-  project
-}: ProjectItemProps) {
+export function ProjectItem({ project }: ProjectItemProps) {
+  const { disabled, img, alt, title, subtitle, description, tags, to } = project;
   return (
     <Container>
-      <ImageContainer>
-        <IconImage src={project.img} alt={project.alt} />
-      </ImageContainer>
-      <ProjectDetailsContainer>
-        <Title>
-          {project.title}
-        </Title>
-        <SubTitle>
-          {project.subtitle}
-        </SubTitle>
-        <Description dangerouslySetInnerHTML={{__html: project.description}} />
-        <TagsContainer>
-          {project.tags.map((tag, i) => <Tag key={i}>{tag}</Tag>)}
-        </TagsContainer>
-        <Button disabled={project.disabled}  href={project.disabled ? "" : project.to}>
-          {project.disabled ? "Em breve" : "Saiba mais"}
-          {!project.disabled && (<ArrowForwardIcon />)}
-          
-        </Button>
-      </ProjectDetailsContainer>
+      {!disabled ? (
+        <Link href={to}>
+            <LinkWrapper>
+              <ImageContainer $img={img} alt={alt} />
+              <ProjectDetailsContainer>
+                <Title>{title}</Title>
+                <SubTitle>{subtitle}</SubTitle>
+                <Description dangerouslySetInnerHTML={{ __html: description }} />
+                <TagsContainer>
+                  {tags.map((tag, i) => (
+                    <Tag key={i}>{tag}</Tag>
+                  ))}
+                </TagsContainer>
+                <Button disabled={disabled}>
+                  Saiba mais
+                  <ArrowForwardIcon />
+                </Button>
+              </ProjectDetailsContainer>
+            </LinkWrapper>
+        </Link>
+      ) : (
+        <Container>
+          <LinkWrapper>
+            <ImageContainer $img={img} alt={alt} />
+            <ProjectDetailsContainer>
+              <Title>{title}</Title>
+              <SubTitle>{subtitle}</SubTitle>
+              <Description dangerouslySetInnerHTML={{ __html: description }} />
+              <TagsContainer>
+                {tags.map((tag, i) => (
+                  <Tag key={i}>{tag}</Tag>
+                ))}
+              </TagsContainer>
+              <Button disabled={disabled}>Em breve</Button>
+            </ProjectDetailsContainer>
+          </LinkWrapper>
+        </Container>
+      )}
     </Container>
   );
 }

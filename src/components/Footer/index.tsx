@@ -74,7 +74,7 @@ export function Footer() {
           </WithColorBehind>
         </ContactContainer>
         <img width={48} src="/icons/smile.svg" alt="smile icon" />
-        <Ellipsis width={374} right='0px' src="/images/elipse-blur-about-me.svg" alt="Ellipsis" />
+        <Ellipsis width={374} $right='0px' src="/images/elipse-blur-about-me.svg" alt="Ellipsis" />
       </ContentContainer>
 
   );

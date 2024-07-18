@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import Link from 'next/link';
 
 const Container = styled.div`
   display: flex;
@@ -26,10 +27,10 @@ const Container = styled.div`
 
 export function ResumeLink() {
   return (
-    <Container >
-      <a target="_blank" href="/documents/resume.pdf">
+    <Container>
+      <Link target="_blank" href="/documents/resume.pdf">
         <img src="/icons/arrow_forward.svg" alt="arrow" />
-      </a>
+      </Link>
     </Container>
   );
 }

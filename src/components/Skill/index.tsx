@@ -6,21 +6,21 @@ export interface SkillContainerProps {
   title?: string | undefined,
   subtitle?: string | undefined,
   description?: string | undefined,
-  bgColor?: string | undefined,
+  bgcolor?: string | undefined,
   width?: string | undefined,
 }
 
-const defaultProps = {
+const skillDefaultProps = {
   image: '',
   alt: '',
   title: '',
   subtitle: '',
-  bgColor: '',
+  bgcolor: '',
   description: '',
   width: '72',
 };
 
-const Container = styled.div<{bgColor: string}>`
+const Container = styled.div<{$bgcolor: string}>`
   display: flex;
   gap: 24px;
   min-width: 180px;
@@ -28,7 +28,7 @@ const Container = styled.div<{bgColor: string}>`
   align-items: center;
   border: 1px solid ${({ theme }) => theme.colors.midnightBlue};
   padding: 8px 54px;
-  background-color: ${({ bgColor, theme }) => (bgColor || theme.colors.iceCream)};
+  background-color: ${({ $bgcolor, theme }) => ($bgcolor || theme.colors.iceCream)};
   border-radius: 100px;
   width: fit-content;
   transition: width 0.5s ease;
@@ -84,10 +84,10 @@ const Description = styled.span`
 `;
 
 export function Skill({
-  image, alt, title, subtitle, description, bgColor, width,
-}: SkillContainerProps & typeof defaultProps) {
+  image = '', alt = '', title = '', subtitle = '', description = '', bgcolor = '', width = '',
+}: SkillContainerProps & typeof skillDefaultProps) {
   return (
-    <Container bgColor={bgColor || ''}>
+    <Container $bgcolor={bgcolor || ''}>
       {image && (
         <img width={width} src={image} alt={alt || ''} />
       )}
@@ -105,4 +105,3 @@ export function Skill({
     </Container>
   );
 }
-Skill.defaultProps = defaultProps;

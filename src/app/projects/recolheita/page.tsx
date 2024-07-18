@@ -1,3 +1,4 @@
+'use client'
 import styled from "styled-components"
 import { Container, Background } from "@/components/Shared"
 import { ProjectHeader } from "@/components/ProjectHeader"
@@ -114,13 +115,13 @@ export default function Recolheita() {
   const {research, interviews, persona, redefining, solution, learnings} = data.contents;
 
   return (
-    <Background color="iceCream" text="midnightBlue">
+    <Background color="iceCream" $text="midnightBlue">
       <ProjectContainer>
         <ProjectHeader 
           title={data.projectHeader.title} 
           header={data.projectHeader.header} 
           subtitle={data.projectHeader.subtitle} 
-          img={data.projectHeader.img} 
+          $img={data.projectHeader.img} 
         />
         <TopicContainer>
           <Topic>{research.title}</Topic>

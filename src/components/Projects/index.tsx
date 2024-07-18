@@ -42,7 +42,7 @@ export function Projects() {
     },
   ];
   return (
-    <Background text="midnightBlue" color="iceCream">
+    <Background $text="midnightBlue" color="iceCream">
       <Container id="projects">
         <PageInfoHeaderContainer>
           <GreenBar />

@@ -114,7 +114,7 @@ export function Resume() {
   }, 3000) */
 
   return (
-    <Background text="midnightBlue" color="iceCream">
+    <Background $text="midnightBlue" color="iceCream">
       <Container id="resume">
         <HeaderContents>
           <PageInfoHeaderContainer>

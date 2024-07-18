@@ -4,7 +4,7 @@ type IProjectHeaderProps = {
   header: string;
   title: string;
   subtitle?: string;
-  img: string;
+  $img: string;
   imgAlt?: string;
 }
 
@@ -58,7 +58,7 @@ const ProjectImage = styled.img`
   }
 `
 
-export function ProjectHeader({header, title, subtitle, img, imgAlt}: IProjectHeaderProps ) {
+export function ProjectHeader({header, title, subtitle, $img, imgAlt}: IProjectHeaderProps ) {
   return (
   <>
   <ProjectHeaderContainer>
@@ -76,7 +76,7 @@ export function ProjectHeader({header, title, subtitle, img, imgAlt}: IProjectHe
       )
     }
   </ProjectHeaderContainer>
-  <ProjectImage src={img} alt={imgAlt || `Image of project ${header}`} />
+  <ProjectImage src={$img} alt={imgAlt || `Image of project ${header}`} />
   </>
 )
 }

@@ -35,17 +35,17 @@ export function Skills({ contents } : {contents: SkillContainerProps[]}) {
     <Container>
       <SkillsContainer>
         {contents.map(({
-          image, alt, bgColor, title, subtitle, description, width,
+          image, alt, bgcolor, title, subtitle, description, width,
         }) => (
           <Skill
             key={title || image}
-            image={image}
-            alt={alt}
-            bgColor={bgColor}
-            title={title}
-            subtitle={subtitle}
-            description={description}
-            width={width}
+            image={image || ''}
+            alt={alt || ''}
+            bgcolor={bgcolor || ''}
+            title={title || ''}
+            subtitle={subtitle || ''}
+            description={description || ''}
+            width={width || ''}
           />
         ))}
       </SkillsContainer>

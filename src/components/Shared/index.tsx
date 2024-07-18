@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 import theme from '../../../public/theme';
 
-export const Container = styled.div<{noise?: boolean}>`
+export const Container = styled.div<{$noise?: boolean}>`
   display: flex;
   flex-direction: column;
   padding: 0 210px;
-  background-image: ${({noise}) => noise ? `url('/images/noise.webp')` : '' };
+  background-image: ${({$noise}) => $noise ? `url('/images/noise.webp')` : '' };
   overflow: hidden;
 
   @media (max-width: 1280px) {
@@ -14,9 +14,9 @@ export const Container = styled.div<{noise?: boolean}>`
   }
 `;
 
-export const Background = styled.div<{ color: keyof typeof theme.colors; text?: keyof typeof theme.colors }>`
+export const Background = styled.div<{ color: keyof typeof theme.colors; $text?: keyof typeof theme.colors }>`
   background-color: ${({ color }) => theme.colors[color] || { color }};
-  ${({ text }) => text && `color: ${theme.colors[text]};`}
+  ${({ $text }) => $text && `color: ${theme.colors[$text]};`}
 `;
 
 export const PageInfoHeaderContainer = styled.div`
@@ -51,12 +51,12 @@ export const PageInfoHeaderText = styled.h1`
   }
 `;
 
-export const Ellipsis = styled.img<{top?: string, left?: string, right?: string, bottom?: string}>`
+export const Ellipsis = styled.img<{$top?: string, $left?: string, $right?: string, $bottom?: string}>`
   background-image: url('/images/noise.webp');
   position: absolute;
-  top: ${({top}) => top ? top : 'auto'};
-  bottom: ${({bottom}) => bottom ? bottom : 'auto'};
-  left: ${({left}) => left ? left : 'auto'};
-  right: ${({right}) => right ? right : 'auto'};
+  top: ${({$top}) => $top ? $top : 'auto'};
+  bottom: ${({$bottom}) => $bottom ? $bottom : 'auto'};
+  left: ${({$left}) => $left ? $left : 'auto'};
+  right: ${({$right}) => $right ? $right : 'auto'};
   filter: blur(400px);
 `

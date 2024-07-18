@@ -1,3 +1,4 @@
+"use client";
 import styled from 'styled-components';
 import { InfiniteText } from '@/components/InfiniteText';
 import { AboutMeDetails } from '@/components/AboutMeDetails';

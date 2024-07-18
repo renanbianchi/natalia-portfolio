@@ -5,10 +5,10 @@ import styled, { css, keyframes } from 'styled-components';
 import React, { useEffect, useState } from 'react';
 import MenuIcon from '@mui/icons-material/Menu';
 import theme from '../../../public/theme';
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation';
 
 
-const NavBarContainer = styled.div<{visible: boolean, menuopen: boolean}>`
+const NavBarContainer = styled.div<{$visible: boolean, $menuopen: boolean}>`
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -22,18 +22,18 @@ const NavBarContainer = styled.div<{visible: boolean, menuopen: boolean}>`
   z-index: 9999 !important;
   overflow-y: hidden;
   transition: top 0.3s ease-in-out;
-  top: ${({visible}) => visible ? '0' : '-70px'};
+  top: ${({$visible}) => $visible ? '0' : '-70px'};
 
   @media (max-width: 1280px) {
     margin: 0px;
     padding: 12px 16px;
-    flex-direction: ${({menuopen}) => menuopen ? `column` : `row`};
-    max-height: ${({menuopen}) => menuopen ? `1000px` : `100px`};
-    min-height: ${({menuopen}) => menuopen ? `500px` : `0px`};
+    flex-direction: ${({$menuopen}) => $menuopen ? `column` : `row`};
+    max-height: ${({$menuopen}) => $menuopen ? `1000px` : `100px`};
+    min-height: ${({$menuopen}) => $menuopen ? `500px` : `0px`};
     align-items: flex-start;
     gap: 108px;
     width: 100%;
-    border-radius: ${({menuopen}) => menuopen ? `0px` : `36px`};
+    border-radius: ${({$menuopen}) => $menuopen ? `0px` : `36px`};
   }
 `;
 
@@ -53,12 +53,12 @@ const NavigateButton = styled.button`
   }
 `;
 
-const OptionsContainer = styled.div<{menuopen: boolean}>`
+const OptionsContainer = styled.div<{$menuopen: boolean}>`
   display: flex;
   gap: 40px;  
 
   @media (max-width: 1280px) {
-    display: ${({menuopen}) => menuopen ? `flex` : `none`};
+    display: ${({$menuopen}) => $menuopen ? `flex` : `none`};
     flex-direction: column;
     gap: 36px;
     align-items: flex-start;
@@ -66,13 +66,13 @@ const OptionsContainer = styled.div<{menuopen: boolean}>`
   }
 `;
 
-const LinksContainer = styled.div<{menuopen: boolean}>`
+const LinksContainer = styled.div<{$menuopen: boolean}>`
   display: flex;
   align-items: center;
   gap: 16px;
 
   @media (max-width: 1280px) {
-    display: ${({menuopen}) => menuopen ? `flex` : `none`};
+    display: ${({$menuopen}) => $menuopen ? `flex` : `none`};
     flex-direction: column;
     align-items: flex-start;
   }
@@ -100,7 +100,7 @@ const Button = styled.button`
   }
 
 `
-const BurgerMenuContainer = styled.button<{menuopen: boolean}>`
+const BurgerMenuContainer = styled.button<{$menuopen: boolean}>`
   display: none;
 
   @media (max-width: 1280px) {
@@ -111,8 +111,8 @@ const BurgerMenuContainer = styled.button<{menuopen: boolean}>`
   border: none;
   margin-left: auto;
   
-  position: ${({menuopen}) => menuopen ? `absolute` : `auto`};
-  right: ${({menuopen}) => menuopen ? `15px` : `auto`};
+  position: ${({$menuopen}) => $menuopen ? `absolute` : `auto`};
+  right: ${({$menuopen}) => $menuopen ? `15px` : `auto`};
 }
 `
 
@@ -158,11 +158,11 @@ export function NavBar() {
   }, [prevScrollPos, menuOpen]);
 
   return (
-    <NavBarContainer menuopen={menuOpen} visible={visible} id='navbar'>
+    <NavBarContainer $menuopen={menuOpen} $visible={visible} id='navbar'>
       <Button onClick={() => navigateToHomeAndScroll('home')}>
       <img width={43.9} height={20} src="/icons/logo.svg" alt="Natalia Logo" />
       </Button>
-      <OptionsContainer menuopen={menuOpen}>
+      <OptionsContainer $menuopen={menuOpen}>
         {options.map((option) => (
           <NavigateButton
             key={option.to}
@@ -172,7 +172,7 @@ export function NavBar() {
           </NavigateButton>
         ))}
       </OptionsContainer>
-      <LinksContainer menuopen={menuOpen}>
+      <LinksContainer $menuopen={menuOpen}>
         <LinkButton target="_blank" href='mailto:natalia.lia15@gmail.com'>
           <MailOutlineIcon />
           email
@@ -182,7 +182,7 @@ export function NavBar() {
           linkedin
         </LinkButton>
       </LinksContainer>
-      <BurgerMenuContainer menuopen={menuOpen} onClick={() => setMenuOpen(!menuOpen)}>
+      <BurgerMenuContainer $menuopen={menuOpen} onClick={() => setMenuOpen(!menuOpen)}>
         {menuOpen ? 
         <CloseIcon style={{color: theme.colors.iceCream}} />  : 
         <MenuIcon style={{color: theme.colors.iceCream}} />}
