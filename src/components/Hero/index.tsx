@@ -11,9 +11,9 @@ const Hero = styled.h1<{$inview: boolean}>`
   width: 1215px;
 
   /* opacity: ${({ $inview }) => $inview ? '1' : '0'}; */
-/*   padding-bottom: ${({ $inview }) => $inview ? '0px' : '50px'}; */
+  /* padding-bottom: ${({ $inview }) => $inview ? '0px' : '50px'}; */
   /* margin-top: ${({ $inview }) => $inview ? '0px' : '-300px'}; */
-  transition: margin-top 5s ease-in-out;
+  /* transition: margin-top 5s ease-in-out; */
 
 
   > br {
@@ -160,7 +160,7 @@ export function HeroHome() {
   ];
   return (
     <HeroContainer id="home">
-      <GradientLight src={`/images/spotLight.svg`} />
+      <GradientLight src={`/images/spotLight.svg`} alt="imagem spotlight"/>
 
         <HeaderContainer>
           <PageInfo>ux/ui design</PageInfo>

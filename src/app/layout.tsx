@@ -14,6 +14,7 @@ import StyledComponentsRegistry from "./registry";
 export default function App({ children }: { children: React.ReactNode }) {
   return (
     <html lang='pt-BR'>
+      <title>Natalia UX/UI Design</title>
       <body>
         <ThemeProvider theme={theme}>
           <GlobalStyle />
