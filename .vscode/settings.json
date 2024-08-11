@@ -2,6 +2,7 @@
   "prettier.requireConfig": false,
   "prettier.arrowParens": "always",
   "prettier.useEditorConfig": false,
-  "prettier.singleQuote": false,
-  "vs-code-prettier-eslint.prettierLast": false
+  "prettier.singleQuote": true,
+  "vs-code-prettier-eslint.prettierLast": false,
+  "reactSnippets.settings.prettierEnabled": false
 }

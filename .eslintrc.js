@@ -8,6 +8,8 @@ module.exports = {
     'plugin:react/recommended',
     'airbnb',
     'plugin:next-on-pages/recommended',
+    'plugin:import/typescript',
+    'prettier',
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
@@ -17,18 +19,11 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
-  plugins: [
-    'react',
-    '@typescript-eslint',
-    'next-on-pages',
-    "plugin:import/typescript",
-  ],
+  plugins: ['react', '@typescript-eslint', 'next-on-pages'],
   settings: {
     'import/resolver': {
       alias: {
-        map: [
-          ['@', './src'],
-        ],
+        map: [['@', './src']],
       },
       node: {
         extensions: ['.js', '.jsx', '.ts', '.tsx'],
@@ -42,5 +37,7 @@ module.exports = {
     'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx', '.ts', '.tsx'] }],
     'react/jsx-props-no-spreading': 0,
     'next-on-pages/no-unsupported-configs': 'warn',
+    'import/no-unresolved': 0,
+    'react/require-default-props': 0,
   },
 };
