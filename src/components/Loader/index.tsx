@@ -1,11 +1,12 @@
-'use client'
-import styled from "styled-components";
+'use client';
+
+import styled from 'styled-components';
 
 const LoadingContainer = styled.div`
   position: fixed;
   width: 100vw;
   height: 100vh;
-  background-color: #101720B3;
+  background-color: #101720b3;
   z-index: 999 !important;
   display: flex;
   justify-content: center;
@@ -20,7 +21,7 @@ const LoadingContent = styled.div`
 
   &:before,
   &:after {
-    content: "";
+    content: '';
     flex: 1;
     background: url('/images/loading/left-n.svg');
     background-size: cover;
@@ -32,19 +33,28 @@ const LoadingContent = styled.div`
     background: url('/images/loading/right-n.svg');
     background-size: cover;
     transform-origin: top left;
-    --s:-1;
+    --s: -1;
   }
 
   @keyframes l9-0 {
-    0%, 66.67% { transform: translateY(0); }; 
-    100% {transform: translateY(0%)};
-  };
-  
-  @keyframes l9-1 {
-    0%, 66.67% { transform: rotate(0); };
-    100% {transform: rotate(calc(var(--s,1) * 90deg))};
-  };
+    0%,
+    66.67% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(0%);
+    }
+  }
 
+  @keyframes l9-1 {
+    0%,
+    66.67% {
+      transform: rotate(0);
+    }
+    100% {
+      transform: rotate(calc(var(--s, 1) * 90deg));
+    }
+  }
 `;
 
 export default function Loading() {
@@ -52,5 +62,5 @@ export default function Loading() {
     <LoadingContainer>
       <LoadingContent />
     </LoadingContainer>
-  )
-};
+  );
+}

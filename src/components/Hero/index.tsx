@@ -1,20 +1,18 @@
-import styled, { keyframes } from 'styled-components';
-import { Container } from '../Shared';
 import Image from 'next/image';
 import { useInView } from 'react-intersection-observer';
+import styled, { keyframes } from 'styled-components';
+import { Container } from '../Shared';
 
-
-const Hero = styled.h1<{$inview: boolean}>`
+const Hero = styled.h1<{ $inview: boolean }>`
   font-family: ${({ theme }) => theme.fonts.boldfont};
   font-size: 200px;
   color: ${({ theme }) => theme.colors.iceCream};
   width: 1215px;
 
-  /* opacity: ${({ $inview }) => $inview ? '1' : '0'}; */
-  /* padding-bottom: ${({ $inview }) => $inview ? '0px' : '50px'}; */
-  /* margin-top: ${({ $inview }) => $inview ? '0px' : '-300px'}; */
+  /* opacity: ${({ $inview }) => ($inview ? '1' : '0')}; */
+  /* padding-bottom: ${({ $inview }) => ($inview ? '0px' : '50px')}; */
+  /* margin-top: ${({ $inview }) => ($inview ? '0px' : '-300px')}; */
   /* transition: margin-top 5s ease-in-out; */
-
 
   > br {
     display: none;
@@ -30,7 +28,6 @@ const Hero = styled.h1<{$inview: boolean}>`
   }
 `;
 
-
 const Animation = keyframes`
    0% {
     transform: rotate(0deg);
@@ -42,13 +39,11 @@ const Animation = keyframes`
   }
 `;
 
-
 const HeroContainer = styled(Container)`
   background-color: transparent;
   position: relative;
   overflow: hidden;
   background-image: url('/images/noise.webp');
-
 `;
 
 const GradientLight = styled.img`
@@ -64,8 +59,7 @@ const GradientLight = styled.img`
   @media (max-width: 1280px) {
     left: 10rem;
   }
-`
-
+`;
 
 const OpenDialogsContainer = styled.div`
   margin-top: 133px;
@@ -79,7 +73,6 @@ const OpenDialogsContainer = styled.div`
     flex-direction: row;
     flex-wrap: wrap;
     margin-bottom: 41px;
-
 
     span: first-child {
       order: 1;
@@ -130,7 +123,6 @@ const PageInfo = styled.span`
   font-family: ${({ theme }) => theme.fonts.bebasneue};
   font-size: 24px;
   color: ${({ theme }) => theme.colors.iceCream};
-
 `;
 
 const Smile = styled(Image)`
@@ -145,36 +137,40 @@ const Smile = styled(Image)`
     position: relative;
     bottom: 0px;
     right: 0px;
-
   }
 `;
 
 export function HeroHome() {
-  const { ref: heroRef, inView: heroInView } = useInView({
-    rootMargin: '-100px 0px',
-  });
+  const { ref: heroRef, inView: heroInView } = useInView();
 
   const dialogs = [
-    { content: 'Como vai você? Espero que esteja bem. Seja bem-vindo ao meu portfolio. Eu sou uma <strong>designer com background em arquitetura em busca de novos desafios,</strong> sinta-se à vontade para explorar um pouco mais sobre mim e meu trabalho.' },
-    { content: 'Se precisar de uma <b>product designer</b>, ou mesmo apenas para conversar sobre design, arte, tecnologia, filmes e músicas, entre em contato comigo.' },
+    {
+      content:
+        'Como vai você? Espero que esteja bem. Seja bem-vindo ao meu portfolio. Eu sou uma <strong>designer com background em arquitetura em busca de novos desafios,</strong> sinta-se à vontade para explorar um pouco mais sobre mim e meu trabalho.',
+    },
+    {
+      content:
+        'Se precisar de uma <b>product designer</b>, ou mesmo apenas para conversar sobre design, arte, tecnologia, filmes e músicas, entre em contato comigo.',
+    },
   ];
   return (
-    <HeroContainer id="home">
-      <GradientLight src={`/images/spotLight.svg`} alt="imagem spotlight"/>
+    <HeroContainer id='home'>
+      <GradientLight src='/images/spotLight.svg' alt='imagem spotlight' />
 
-        <HeaderContainer>
-          <PageInfo>ux/ui design</PageInfo>
-          <GreenBar />
-        </HeaderContainer>
-        <Hero ref={heroRef} $inview={heroInView}>Olá, <br />eu sou a Natalia</Hero>
-        <OpenDialogsContainer>
-          {dialogs.map((dialog) => (
-            <Dialog key={dialog.content} dangerouslySetInnerHTML={{ __html: dialog.content }} />
-          ))}
-          <Smile width={48} height={48} src="/icons/smile.svg" alt="ícone smile" />
-        </OpenDialogsContainer>
-
+      <HeaderContainer>
+        <PageInfo>ux/ui design</PageInfo>
+        <GreenBar />
+      </HeaderContainer>
+      <Hero ref={heroRef} $inview={heroInView}>
+        Olá, <br />
+        eu sou a Natalia
+      </Hero>
+      <OpenDialogsContainer>
+        {dialogs.map((dialog) => (
+          <Dialog key={dialog.content} dangerouslySetInnerHTML={{ __html: dialog.content }} />
+        ))}
+        <Smile width={48} height={48} src='/icons/smile.svg' alt='ícone smile' />
+      </OpenDialogsContainer>
     </HeroContainer>
-    
   );
 }

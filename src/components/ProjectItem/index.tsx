@@ -60,19 +60,6 @@ const LinkWrapper = styled.div`
   }
 `;
 
-const IconImage = styled.img`
-  left: -110px;
-  position: absolute;
-  overflow: hidden;
-
-  @media (max-width: 1280px) {
-    left: 0px;
-    position: relative;
-    width: 100%;
-    height: 100%;
-  }
-`;
-
 const ProjectDetailsContainer = styled.div`
   justify-content: space-around;
   display: flex;

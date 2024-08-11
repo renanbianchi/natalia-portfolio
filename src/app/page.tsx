@@ -1,10 +1,11 @@
-"use client";
+'use client';
+
 import styled from 'styled-components';
-import { InfiniteText } from '@/components/InfiniteText';
 import { AboutMeDetails } from '@/components/AboutMeDetails';
-import { Resume } from '@/components/Resume';
-import { Projects } from '@/components/Projects';
 import { HeroHome } from '@/components/Hero';
+import { InfiniteText } from '@/components/InfiniteText';
+import { Projects } from '@/components/Projects';
+import { Resume } from '@/components/Resume';
 
 const HomeContainer = styled.div`
   display: flex;

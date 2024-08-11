@@ -1,13 +1,12 @@
 import styled from 'styled-components';
 import theme from '../../../public/theme';
-import { ColorLensTwoTone } from '@mui/icons-material';
 
 type WithColorBehindProps = {
-  color: keyof typeof theme.colors,
-  children: any
-}
+  color: keyof typeof theme.colors;
+  children: any;
+};
 
-const Container = styled.div<{color: keyof typeof theme.colors}>`
+const Container = styled.div<{ color: keyof typeof theme.colors }>`
   position: relative;
   bottom: 5px;
   height: 8px;
@@ -21,15 +20,12 @@ const ChildrenContainer = styled.div`
   left: 0;
   right: 0;
   bottom: 0;
-
 `;
 
 export function WithColorBehind({ children, color }: WithColorBehindProps) {
   return (
     <Container color={color}>
-      <ChildrenContainer>
-      {children}
-      </ChildrenContainer>
+      <ChildrenContainer>{children}</ChildrenContainer>
     </Container>
   );
 }
