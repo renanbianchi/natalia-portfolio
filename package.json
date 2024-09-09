@@ -24,7 +24,6 @@
     "eslint-plugin-next-on-pages": "^1.11.0",
     "eslint-plugin-react-hooks": "^4.6.0",
     "next": "latest",
-    "next-seo": "^6.5.0",
     "nextjs-toploader": "^1.6.12",
     "react": "^18",
     "react-dom": "^18",
