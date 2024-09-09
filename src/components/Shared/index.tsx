@@ -42,9 +42,10 @@ export const GreenBar = styled.div`
 `;
 
 export const PageInfoHeaderText = styled.h1`
-  font-family: ${theme.fonts.bebasneue};
-  font-size: 68px;
+  font-family: ${theme.fonts.boldfont};
+  font-size: 96px;
   text-transform: uppercase;
+  text-align: left;
 
   @media (max-width: 1280px) {
     font-size: 48px;

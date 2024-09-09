@@ -10,6 +10,17 @@ const HeaderContents = styled.div`
   }
 `;
 
+const PageInfoHeaderContainerStyled = styled(PageInfoHeaderContainer)`
+  display: flex;
+  gap: 10px;
+
+  @media (max-width: 1280px) {
+    margin-bottom: 0px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+`;
+
 export function Resume() {
   const contents = [
     {
@@ -103,10 +114,10 @@ export function Resume() {
     <Background $text='midnightBlue' color='iceCream'>
       <Container id='resume'>
         <HeaderContents>
-          <PageInfoHeaderContainer>
-            <PageInfoHeaderText>currículo</PageInfoHeaderText>
-          </PageInfoHeaderContainer>
-          <ResumeLink />
+          <PageInfoHeaderContainerStyled>
+            <PageInfoHeaderText>curriculo.</PageInfoHeaderText>
+            <ResumeLink />
+          </PageInfoHeaderContainerStyled>
         </HeaderContents>
         <Skills contents={contents} />
       </Container>

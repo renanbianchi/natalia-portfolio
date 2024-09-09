@@ -72,6 +72,7 @@ const Subtitle = styled.span`
 `;
 
 const Description = styled.span`
+  text-align: center;
   font-family: ${({ theme }) => theme.fonts.poppins};
   font-size: 12px;
   font-weight: 400;

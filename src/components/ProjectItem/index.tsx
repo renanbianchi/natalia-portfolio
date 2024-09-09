@@ -1,7 +1,7 @@
 /* eslint-disable react/no-array-index-key */
-import styled from "styled-components";
-import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
-import Link from "next/link";
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import Link from 'next/link';
+import styled from 'styled-components';
 
 interface ProjectItemProps {
   project: {
@@ -20,19 +20,19 @@ const ImageContainer = styled.div<{ $img: string; alt: string }>`
   position: relative;
   min-width: 546px;
   height: 364px;
-  transition: all 1s ease-in-out;
+  transition: all 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transform: scale(1);
 
   overflow: hidden;
   border-radius: 24px;
   background-image: ${({ $img }) => `url(${$img})`};
-  background-size: auto;
+  background-size: 800px auto;
   background-repeat: no-repeat;
-  background-position: top;
+  background-position: center top;
 
   @media (max-width: 1280px) {
-    min-width: auto;
-    width: 100%;
-    height: 100%;
+    min-width: 100%;
+    background-position: top left 20%;
   }
 `;
 
@@ -42,21 +42,25 @@ const Container = styled.div`
 
 const LinkWrapper = styled.div`
   display: flex;
-  justify-content: space-evenly;
+  justify-content: left;
   gap: 24px;
   width: 100%;
   max-height: 364px;
 
+  &:hover {
+    ${ImageContainer} {
+      transition: all 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      min-width: 846px;
+      background-size: 946px;
+      transform: scale(1.05);
+      margin-right: 24px;
+    }
+  }
+
   @media (max-width: 1280px) {
     flex-direction: column;
     max-height: 100%;
-  }
-
-  &:hover {
-    ${ImageContainer} {
-      transition: all 1s ease-in-out;
-      min-width: 646px;
-    }
+    width: 100%;
   }
 `;
 
@@ -140,23 +144,23 @@ export function ProjectItem({ project }: ProjectItemProps) {
     <Container>
       {!disabled ? (
         <Link href={to}>
-            <LinkWrapper>
-              <ImageContainer $img={img} alt={alt} />
-              <ProjectDetailsContainer>
-                <Title>{title}</Title>
-                <SubTitle>{subtitle}</SubTitle>
-                <Description dangerouslySetInnerHTML={{ __html: description }} />
-                <TagsContainer>
-                  {tags.map((tag, i) => (
-                    <Tag key={i}>{tag}</Tag>
-                  ))}
-                </TagsContainer>
-                <Button disabled={disabled}>
-                  Saiba mais
-                  <ArrowForwardIcon />
-                </Button>
-              </ProjectDetailsContainer>
-            </LinkWrapper>
+          <LinkWrapper>
+            <ImageContainer $img={img} alt={alt} />
+            <ProjectDetailsContainer>
+              <Title>{title}</Title>
+              <SubTitle>{subtitle}</SubTitle>
+              <Description dangerouslySetInnerHTML={{ __html: description }} />
+              <TagsContainer>
+                {tags.map((tag, i) => (
+                  <Tag key={i}>{tag}</Tag>
+                ))}
+              </TagsContainer>
+              <Button disabled={disabled}>
+                Saiba mais
+                <ArrowForwardIcon />
+              </Button>
+            </ProjectDetailsContainer>
+          </LinkWrapper>
         </Link>
       ) : (
         <Container>

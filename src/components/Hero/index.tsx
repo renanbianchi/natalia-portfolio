@@ -69,10 +69,11 @@ const OpenDialogsContainer = styled.div`
   margin-bottom: 150px;
 
   @media (max-width: 1280px) {
-    gap: 25px;
+    gap: 50px;
     flex-direction: row;
     flex-wrap: wrap;
     margin-bottom: 41px;
+    margin-top: 50px;
 
     span: first-child {
       order: 1;
@@ -126,18 +127,8 @@ const PageInfo = styled.span`
 `;
 
 const Smile = styled(Image)`
-  position: absolute;
-  bottom: 0px;
-  right: 300px;
   width: auto;
   height: auto;
-
-  @media (max-width: 1280px) {
-    display: flex;
-    position: relative;
-    bottom: 0px;
-    right: 0px;
-  }
 `;
 
 export function HeroHome() {
@@ -146,12 +137,8 @@ export function HeroHome() {
   const dialogs = [
     {
       content:
-        'Como vai você? Espero que esteja bem. Seja bem-vindo ao meu portfolio. Eu sou uma <strong>designer com background em arquitetura em busca de novos desafios,</strong> sinta-se à vontade para explorar um pouco mais sobre mim e meu trabalho.',
-    },
-    {
-      content:
-        'Se precisar de uma <b>product designer</b>, ou mesmo apenas para conversar sobre design, arte, tecnologia, filmes e músicas, entre em contato comigo.',
-    },
+        'Boas vindas a este portfolio. Fique à vontade para explorar mais sobre mim e meu trabalho. Se estiver procurando uma designer, quiser bater um papo sobre design, arte, tecnologia, filmes ou músicas, entre em contato.',
+    }
   ];
   return (
     <HeroContainer id='home'>
@@ -163,7 +150,7 @@ export function HeroHome() {
       </HeaderContainer>
       <Hero ref={heroRef} $inview={heroInView}>
         Olá, <br />
-        eu sou a Natalia
+        eu sou a Natalia.
       </Hero>
       <OpenDialogsContainer>
         {dialogs.map((dialog) => (

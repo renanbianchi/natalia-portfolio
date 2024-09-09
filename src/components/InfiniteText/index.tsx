@@ -13,7 +13,7 @@ const Container = styled.div`
   display: flex;
   width: 100%;
   overflow: hidden;
-  margin-top: -27px;
+  margin-top: -26px;
   margin-bottom: -9.5px;
   user-select: none;
 `;
