@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { ProjectItem } from '../ProjectItem';
-import { Background, Container, GreenBar, PageInfoHeaderContainer, PageInfoHeaderText } from '../Shared';
+import { Background, Container, PageInfoHeaderContainer, PageInfoHeaderText } from '../Shared';
 
 const ProjectsContainer = styled.div`
   display: flex;
@@ -42,7 +42,6 @@ export function Projects() {
     <Background $text='midnightBlue' color='iceCream'>
       <Container id='projects'>
         <PageInfoHeaderContainer>
-          <GreenBar />
           <PageInfoHeaderText>projetos.</PageInfoHeaderText>
         </PageInfoHeaderContainer>
         <ProjectsContainer>
