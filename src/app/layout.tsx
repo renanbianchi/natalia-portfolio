@@ -15,12 +15,12 @@ export default function App({ children }: { children: React.ReactNode }) {
     <html lang='pt-BR'>
       <head>
         <title>Natalia - UX/UI Design</title>
-        <meta name="description" content="Hello And Welcome to my Portfolio" />
+        <meta name="description" content="Boas vindas ao meu Portfolio" />
         <meta property="og:type" content="website" />
         <meta property="og:locale" content="pt_BR" />
         <meta property="og:url" content="https://natalia-araujo.vercel.app/" />
         <meta property="og:site_name" content="Natalia Araujo" />
-        <meta property="og:image" content="https://natalia-araujo.vercel.app/images/natalia1.webp" />
+        <meta property="og:image" content="https://natalia-araujo.vercel.app/images/open-graph.webp" />
         <meta property="og:image:width" content="375" />
         <meta property="og:image:height" content="339" />
         <meta property="og:image:alt" content="Natalia Araujo" />
