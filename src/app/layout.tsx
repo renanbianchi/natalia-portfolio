@@ -1,39 +1,31 @@
-'use client';
-
-/* eslint-disable import/no-unresolved */
-import NextTopLoader from 'nextjs-toploader';
-import React, { Suspense } from 'react';
-import { ThemeProvider } from 'styled-components';
-import theme from '../../public/theme';
+'use client'
 
 import { Footer } from '@/components/Footer';
 import { NavBar } from '@/components/Navbar';
 import { GlobalStyle } from '@/components/globalstyles';
-import Loading from './projects/loading';
+import Head from 'next/head';
+import NextTopLoader from 'nextjs-toploader';
+import React, { Suspense } from 'react';
+import { ThemeProvider } from 'styled-components';
+import theme from '../../public/theme';
+import Loading from './loading';
 import StyledComponentsRegistry from './registry';
-
-export const metadata = {
-  title: 'Natalia - UX/UI Design',
-  description: 'Hello And Welcome to my Portfolio',
-  openGraph: {
-    type: 'website',
-    locale: 'pt_BR',
-    url: 'https://natalia-araujo.vercel.app/',
-    siteName: 'Natalia Araujo',
-    images: [
-      {
-        url: 'https://natalia-araujo.vercel.app/images/natalia1.webp',
-        width: 375,
-        height: 339,
-        alt: 'Natalia Araujo',
-      },
-    ],
-  },
-};
 
 export default function App({ children }: { children: React.ReactNode }) {
   return (
     <html lang='pt-BR'>
+      <Head>
+        <title>Natalia - UX/UI Design</title>
+        <meta name="description" content="Hello And Welcome to my Portfolio" />
+        <meta property="og:type" content="website" />
+        <meta property="og:locale" content="pt_BR" />
+        <meta property="og:url" content="https://natalia-araujo.vercel.app/" />
+        <meta property="og:site_name" content="Natalia Araujo" />
+        <meta property="og:image" content="https://natalia-araujo.vercel.app/images/natalia1.webp" />
+        <meta property="og:image:width" content="375" />
+        <meta property="og:image:height" content="339" />
+        <meta property="og:image:alt" content="Natalia Araujo" />
+      </Head>
       <body>
         <StyledComponentsRegistry>
           <ThemeProvider theme={theme}>

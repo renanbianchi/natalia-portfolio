@@ -10,6 +10,8 @@ module.exports = {
     'plugin:next-on-pages/recommended',
     'plugin:import/typescript',
     'prettier',
+    'next', 
+    'next/core-web-vitals'
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
@@ -39,5 +41,6 @@ module.exports = {
     'next-on-pages/no-unsupported-configs': 'warn',
     'import/no-unresolved': 0,
     'react/require-default-props': 0,
+    '@next/next/no-img-element': 0
   },
 };
