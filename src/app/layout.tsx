@@ -24,6 +24,7 @@ export default function App({ children }: { children: React.ReactNode }) {
         <meta property="og:image:width" content="375" />
         <meta property="og:image:height" content="339" />
         <meta property="og:image:alt" content="Natalia Araujo" />
+        <meta name="google-site-verification" content="2T41qSxVrHVjWgyynPgK5PAHKmVgkKSCaQjsgcGyl48" />
       </head>
       <body>
         <StyledComponentsRegistry>
