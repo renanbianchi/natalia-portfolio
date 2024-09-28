@@ -3,7 +3,6 @@
 import { Footer } from '@/components/Footer';
 import { NavBar } from '@/components/Navbar';
 import { GlobalStyle } from '@/components/globalstyles';
-import Head from 'next/head';
 import NextTopLoader from 'nextjs-toploader';
 import React, { Suspense } from 'react';
 import { ThemeProvider } from 'styled-components';
@@ -14,7 +13,7 @@ import StyledComponentsRegistry from './registry';
 export default function App({ children }: { children: React.ReactNode }) {
   return (
     <html lang='pt-BR'>
-      <Head>
+      <head>
         <title>Natalia - UX/UI Design</title>
         <meta name="description" content="Hello And Welcome to my Portfolio" />
         <meta property="og:type" content="website" />
@@ -25,7 +24,7 @@ export default function App({ children }: { children: React.ReactNode }) {
         <meta property="og:image:width" content="375" />
         <meta property="og:image:height" content="339" />
         <meta property="og:image:alt" content="Natalia Araujo" />
-      </Head>
+      </head>
       <body>
         <StyledComponentsRegistry>
           <ThemeProvider theme={theme}>
