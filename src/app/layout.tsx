@@ -20,7 +20,7 @@ export default function App({ children }: { children: React.ReactNode }) {
         <meta property="og:locale" content="pt_BR" />
         <meta property="og:url" content="https://natalia-araujo.vercel.app/" />
         <meta property="og:site_name" content="Natalia Araujo" />
-        <meta property="og:image" content="https://natalia-araujo.vercel.app/images/open-graph.webp" />
+        <meta property="og:image" content="https://natalia-araujo.vercel.app/images/open-graph.png" />
         <meta property="og:image:width" content="375" />
         <meta property="og:image:height" content="339" />
         <meta property="og:image:alt" content="Natalia Araujo" />
