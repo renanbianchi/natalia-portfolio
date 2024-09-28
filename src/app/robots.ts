@@ -1,12 +1,12 @@
-import { NextApiRequest, NextApiResponse } from 'next';
-
-export default function handler(req: NextApiRequest, res: NextApiResponse) {
-  res.setHeader('Content-Type', 'text/plain');
-  res.write(`
-    User-agent: *
-    Allow: /
-    
-    Sitemap: https://natalia-araujo.vercel.app/sitemap.xml
-  `);
-  res.end();
+import type { MetadataRoute } from 'next'
+ 
+export default function robots(): MetadataRoute.Robots {
+  return {
+    rules: {
+      userAgent: '*',
+      allow: '/',
+      disallow: '/private/',
+    },
+    sitemap: 'https://natalia-araujo.vercel.app/sitemap.xml',
+  }
 }
