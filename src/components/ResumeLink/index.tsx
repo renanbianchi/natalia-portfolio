@@ -28,7 +28,7 @@ const Container = styled.div`
 export function ResumeLink() {
   return (
     <Container>
-      <Link target="_blank" href="/documents/resume.pdf">
+      <Link target="_blank" href="/documents/Natalia Araujo resume.pdf">
         <img src="/icons/arrow_forward.svg" alt="arrow" />
       </Link>
     </Container>
