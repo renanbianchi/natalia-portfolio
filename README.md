@@ -1,36 +1,149 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Natalia Portfolio
+
+This is the source code for Natalia's portfolio, a sleek and modern web application showcasing projects, skills, and professional information. Built with Next.js, TypeScript, and styled-components, this portfolio is designed for a seamless and responsive user experience.
+
+---
+
+## Features
+
+- **Project Showcase:** Highlight projects with detailed images and descriptions.
+- **Responsive Design:** Optimized for all devices, ensuring usability across desktop, tablet, and mobile.
+- **Theming:** Custom fonts and colors for a visually appealing design.
+- **SEO Friendly:** Includes sitemap and robots configuration for improved search engine visibility.
+- **Fast Loading:** Implements loaders and intersection observers for a smooth experience.
+
+---
+
+## Tech Stack
+
+- **Framework:** [Next.js](https://nextjs.org/)
+- **Language:** TypeScript
+- **Styling:** styled-components
+- **Linting:** ESLint (Airbnb and Prettier configs)
+- **Icons:** react-icons, MUI Icons
+
+---
+
+## Directory Structure
+
+```
+renanbianchi-natalia-portfolio/
+├── next.config.mjs            # Next.js configuration
+├── .eslintrc.js               # ESLint configuration
+├── public/                    # Static assets
+│   ├── fonts/                 # Custom fonts
+│   ├── images/                # Image assets
+│   ├── theme/                 # Theming files
+│   └── icons/                 # Custom icons
+├── package.json               # Project dependencies
+├── styled.d.ts                # Styled-components theme definition
+├── tsconfig.json              # TypeScript configuration
+├── src/                       # Source code
+│   ├── components/            # Reusable React components
+│   └── app/                   # Next.js app directory (pages, layout, etc.)
+```
+
+---
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Ensure you have the following installed:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- [Node.js](https://nodejs.org/) (v18 or later)
+- [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Installation
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+1. Clone the repository:
 
-## Learn More
+   ```bash
+   git clone https://github.com/yourusername/natalia-portfolio.git
+   cd natalia-portfolio
+   ```
 
-To learn more about Next.js, take a look at the following resources:
+2. Install dependencies:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+3. Run the development server:
 
-## Deploy on Vercel
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+4. Open [http://localhost:3000](http://localhost:3000) to view the app in your browser.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+---
+
+## Scripts
+
+- `npm run dev` - Start the development server.
+- `npm run build` - Build the project for production.
+- `npm run start` - Start the production server.
+- `npm run lint` - Run ESLint to check for code issues.
+
+---
+
+## Configuration
+
+### `next.config.mjs`
+
+- Enables React strict mode.
+- Configures styled-components for better integration.
+
+### `.eslintrc.js`
+
+- Extends Airbnb, Prettier, and Next.js ESLint configurations.
+- Includes custom rules for flexibility and better code standards.
+
+### `public/theme/index.ts`
+
+- Defines custom fonts and color palette.
+- Integrates local and Google fonts.
+
+---
+
+## Deployment
+
+To deploy the application, follow these steps:
+
+1. Build the app:
+   ```bash
+   npm run build
+   ```
+2. Deploy the `.next` folder using your preferred hosting provider (e.g., Vercel, Netlify, AWS).
+
+---
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
+
+---
+
+## Acknowledgments
+
+- Fonts: [Google Fonts](https://fonts.google.com/) and custom Bold Font.
+- Images: Provided assets in the `public/images` directory.
+- Icons: [react-icons](https://react-icons.github.io/) and MUI Icons.
+
+---
+
+## Contributions
+
+Feel free to fork this repository and submit pull requests. Any contributions, improvements, or suggestions are welcome!
+
+---
+
+## Contact
+
+For questions or feedback, reach out via [email@example.com](mailto:email@example.com).
+
