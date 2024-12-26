@@ -145,5 +145,5 @@ Feel free to fork this repository and submit pull requests. Any contributions, i
 
 ## Contact
 
-For questions or feedback, reach out via [email@example.com](mailto:email@example.com).
+For questions or feedback, reach out via [renanbianchi@gmail.com](mailto:renanbianchi@gmail.com).
 
