@@ -20,6 +20,7 @@ export default function Home() {
       <Projects />
       <InfiniteText />
       <AboutMeDetails />
+      <InfiniteText upsideDown />
       <Resume />
     </HomeContainer>
   );

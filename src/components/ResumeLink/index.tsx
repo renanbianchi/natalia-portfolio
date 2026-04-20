@@ -29,7 +29,7 @@ export function ResumeLink() {
   return (
     <Container>
       <Link target="_blank" href="/documents/Natalia Araujo resume.pdf">
-        <img src="/icons/arrow_forward.svg" alt="arrow" />
+        <img src="/icons/arrow_up.svg" alt="arrow" />
       </Link>
     </Container>
   );

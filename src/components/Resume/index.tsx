@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import { Container, Background, PageInfoHeaderContainer, PageInfoHeaderText } from '../Shared';
 import { ResumeLink } from '../ResumeLink';
+import { Background, Container, PageInfoHeaderContainer, PageInfoHeaderText } from '../Shared';
 import { Skills } from '../Skills';
 
 const HeaderContents = styled.div`
@@ -12,12 +12,25 @@ const HeaderContents = styled.div`
 
 const PageInfoHeaderContainerStyled = styled(PageInfoHeaderContainer)`
   display: flex;
-  gap: 10px;
+  gap: 8px;
 
   @media (max-width: 1280px) {
     margin-bottom: 0px;
     flex-wrap: wrap;
     justify-content: center;
+  }
+`;
+
+const SkillsAndResume = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
+  @media (max-width: 1280px) {
+    flex-direction: column;
+    gap: 0px;
   }
 `;
 
@@ -115,11 +128,13 @@ export function Resume() {
       <Container id='resume'>
         <HeaderContents>
           <PageInfoHeaderContainerStyled>
-            <PageInfoHeaderText>curriculo.</PageInfoHeaderText>
-            <ResumeLink />
+            <PageInfoHeaderText>curriculo</PageInfoHeaderText>
           </PageInfoHeaderContainerStyled>
         </HeaderContents>
-        <Skills contents={contents} />
+        <SkillsAndResume>
+          <Skills contents={contents} />
+          <ResumeLink />
+        </SkillsAndResume>
       </Container>
     </Background>
   );

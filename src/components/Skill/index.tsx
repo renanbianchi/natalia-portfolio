@@ -26,12 +26,12 @@ const Container = styled.div<{$bgcolor: string}>`
   min-width: 180px;
   justify-content: center;
   align-items: center;
-  border: 1px solid ${({ theme }) => theme.colors.midnightBlue};
   padding: 8px 54px;
   background-color: ${({ $bgcolor, theme }) => ($bgcolor || theme.colors.iceCream)};
   border-radius: 100px;
   width: fit-content;
   transition: width 0.5s ease;
+  filter: drop-shadow(0px 16px 16px rgba(16, 23, 32, 0.1));
 
 
   @media (max-width: 1280px) {

@@ -26,7 +26,6 @@ export const PageInfoHeaderContainer = styled.div`
 
   @media (max-width: 1280px) {
     text-align: left;
-    margin-bottom: 60px;
     margin-top: 60px;
   }
 `;
@@ -60,4 +59,5 @@ export const Ellipsis = styled.img<{ $top?: string; $left?: string; $right?: str
   left: ${({ $left }) => $left || 'auto'};
   right: ${({ $right }) => $right || 'auto'};
   filter: blur(400px);
+  pointer-events: none;
 `;

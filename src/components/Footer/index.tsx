@@ -1,3 +1,5 @@
+import Link from 'next/link';
+import { MdArrowOutward, MdOutlineContentCopy } from "react-icons/md";
 import styled from 'styled-components';
 import { Container, Ellipsis } from '../Shared';
 
@@ -32,7 +34,7 @@ const ContactContainer = styled.div`
 `;
 
 const Header = styled.h1`
-  font-family: ${({ theme }) => theme.fonts.bebasneue};
+  font-family: ${({ theme }) => theme.fonts.boldfont};
   font-size: 48px;
   font-weight: 400;
 
@@ -42,11 +44,33 @@ const Header = styled.h1`
   }
 `;
 
-const Content = styled.a`
+const Subtitle = styled.span`
   font-family: ${({ theme }) => theme.fonts.poppins};
-  font-size: 16px;
-  font-style: italic;
+  font-size: 14px;
   font-weight: 500;
+  max-width: 530px;
+`;
+
+const EmailAndLinkedinLinks = styled.div`
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 1;
+
+  @media (max-width: 1000px) {
+
+  }
+`;
+
+const LinkTo = styled(Link)`
+  font-family: ${({ theme }) => theme.fonts.bebasneue};
+  font-size: 32px;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 8px;
+  cursor: pointer;
 `;
 
 export function Footer() {
@@ -55,17 +79,15 @@ export function Footer() {
       <ContactContainer>
         <Header>
           vamos criar juntos?
-          <br /> entre em contato
         </Header>
-        <Content target='_blank' href='mailto:natalia.lia15@gmail.com'>
-          Email: natalia.lia15@gmail.com
-          <br />
-        </Content>
-        <Content target='_blank' href='https://www.linkedin.com/in/nataliafernandesaraujo/'>
-          Linkedin/in/nataliafernandesaraujo
-        </Content>
+        <Subtitle>
+          Se estiver procurando uma designer, quiser bater um papo sobre design, arte, tecnologia, filmes ou músicas, entre em contato.
+        </Subtitle>
       </ContactContainer>
-      <img width={48} src='/icons/smile.svg' alt='smile icon' />
+      <EmailAndLinkedinLinks>
+        <LinkTo target='_blank' href='mailto:natalia.lia15@gmail.com'>Email <MdOutlineContentCopy size={24} /></LinkTo>
+        <LinkTo target='_blank' href='https://www.linkedin.com/in/nataliafernandesaraujo/'>Linkedin <MdArrowOutward size={24} /></LinkTo>
+      </EmailAndLinkedinLinks>
       <Ellipsis width={374} $right='0px' src='/images/elipse-blur-about-me.svg' alt='Ellipsis' />
     </ContentContainer>
   );

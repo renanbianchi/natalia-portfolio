@@ -51,7 +51,7 @@ const LinkWrapper = styled.div`
     ${ImageContainer} {
       transition: all 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275);
       min-width: 846px;
-      background-size: 946px;
+      background-size: 900px;
       transform: scale(1.05);
       margin-right: 24px;
     }

@@ -1,13 +1,29 @@
-import Image from 'next/image';
+import { FaArrowDown } from "react-icons/fa6";
 import { useInView } from 'react-intersection-observer';
 import styled, { keyframes } from 'styled-components';
-import { Container } from '../Shared';
+import { Background, Container } from '../Shared';
+
+const HeroContainer = styled(Container)`
+  position: relative;
+  overflow: visible;
+  background-image: url('/images/noise.webp');
+  background-color: ${({ theme }) => theme.colors.midnightBlue};
+  min-height: 100vh;
+  border-end-start-radius: 120px;
+  border-end-end-radius: 120px;
+
+  @media (max-width: 1000px) {
+    border-end-start-radius: 30px;
+    border-end-end-radius: 30px;
+  }
+`;
 
 const Hero = styled.h1<{ $inview: boolean }>`
   font-family: ${({ theme }) => theme.fonts.boldfont};
-  font-size: 200px;
+  font-size: clamp(68px, 20vw, 200px);
   color: ${({ theme }) => theme.colors.iceCream};
-  width: 1215px;
+  max-width: 1215px;
+
 
   /* opacity: ${({ $inview }) => ($inview ? '1' : '0')}; */
   /* padding-bottom: ${({ $inview }) => ($inview ? '0px' : '50px')}; */
@@ -19,7 +35,6 @@ const Hero = styled.h1<{ $inview: boolean }>`
   }
 
   @media (max-width: 1280px) {
-    font-size: 68px;
     width: 368px;
     white-space: pre-wrap;
     > br {
@@ -39,13 +54,6 @@ const Animation = keyframes`
   }
 `;
 
-const HeroContainer = styled(Container)`
-  background-color: transparent;
-  position: relative;
-  overflow: hidden;
-  background-image: url('/images/noise.webp');
-`;
-
 const GradientLight = styled.img`
   position: absolute;
   top: 0;
@@ -61,12 +69,17 @@ const GradientLight = styled.img`
   }
 `;
 
-const OpenDialogsContainer = styled.div`
-  margin-top: 133px;
+const HeroAndDialogContainer = styled.div`
   display: flex;
+  flex-direction: column;
+  gap: 4vh;
+`;
+
+const OpenDialogsContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
   gap: 120px;
   position: relative;
-  margin-bottom: 150px;
 
   @media (max-width: 1280px) {
     gap: 50px;
@@ -95,13 +108,13 @@ const OpenDialogsContainer = styled.div`
 
 const Dialog = styled.span`
   font-family: ${({ theme }) => theme.fonts.poppins};
-  font-size: 14px;
+  font-size: clamp(12px, 1vw, 14px);
   color: ${({ theme }) => theme.colors.iceCream};
-  width: 482px;
+  max-width: 25vw;
 
   @media (max-width: 1280px) {
-    font-size: 12px;
-    width: 70vw;
+    width: 100%;
+    max-width: 80vw;
   }
 `;
 
@@ -126,9 +139,48 @@ const PageInfo = styled.span`
   color: ${({ theme }) => theme.colors.iceCream};
 `;
 
-const Smile = styled(Image)`
-  width: auto;
-  height: auto;
+const CheckMyWorkContainer = styled.div`
+  position: absolute;
+  right: 10vw;
+  bottom: -8vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  @media (max-width: 1000px) {
+    display: none;
+  }
+`;
+
+const ArrowContainer = styled.div`
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+  background-color: ${({ theme }) => theme.colors.violet};
+  padding: 60px;
+  max-width: 168px;
+  max-height: 168px;
+`;
+
+const ArchedText = styled.svg`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 260px;
+  height: 260px;
+  overflow: visible;
+  pointer-events: none;
+
+  text {
+    font-family: ${({ theme }) => theme.fonts.poppins};
+    font-size: 14px;
+    fill: ${({ theme }) => theme.colors.iceCream};
+    letter-spacing: 2px;
+  }
 `;
 
 export function HeroHome() {
@@ -137,27 +189,52 @@ export function HeroHome() {
   const dialogs = [
     {
       content:
-        'Boas vindas a este portfolio. Fique à vontade para explorar mais sobre mim e meu trabalho. Se estiver procurando uma designer, quiser bater um papo sobre design, arte, tecnologia, filmes ou músicas, entre em contato.',
+        'Sou uma UX/UI designer com olhar analítico e uma vontade constante de entender como as pessoas pensam, sentem e se movimentam pelo mundo. Trago uma bagagem que mistura arquitetura, design gráfico e pesquisa, com foco em criar experiências acessíveis e cheias de intenção.',
     }
   ];
   return (
-    <HeroContainer id='home'>
-      <GradientLight src='/images/spotLight.svg' alt='imagem spotlight' />
+    <Background color="iceCream">
+      <HeroContainer id='home'>
+        <GradientLight src='/images/spotLight.svg' alt='imagem spotlight' />
 
-      <HeaderContainer>
-        <PageInfo>ux/ui design</PageInfo>
-        <GreenBar />
-      </HeaderContainer>
-      <Hero ref={heroRef} $inview={heroInView}>
-        Olá, <br />
-        eu sou a Natalia.
-      </Hero>
-      <OpenDialogsContainer>
-        {dialogs.map((dialog) => (
-          <Dialog key={dialog.content} dangerouslySetInnerHTML={{ __html: dialog.content }} />
-        ))}
-        <Smile width={48} height={48} src='/icons/smile.svg' alt='ícone smile' />
-      </OpenDialogsContainer>
-    </HeroContainer>
+        <HeaderContainer>
+          <PageInfo>ux/ui design</PageInfo>
+          <GreenBar />
+        </HeaderContainer>
+        <HeroAndDialogContainer>
+          <Hero ref={heroRef} $inview={heroInView}>
+            Olá, <br />
+            eu sou a Natalia.
+          </Hero>
+          <OpenDialogsContainer>
+            {dialogs.map((dialog) => (
+              <Dialog key={dialog.content} dangerouslySetInnerHTML={{ __html: dialog.content }} />
+            ))}
+          </OpenDialogsContainer>
+        </HeroAndDialogContainer>
+        <CheckMyWorkContainer>
+          <ArrowContainer>
+            <ArchedText viewBox='0 0 260 260'>
+              <defs>
+                <path
+                  id='arched-text-path'
+                  d='M 30,130 A 100,100 0 0 1 230,130'
+                />
+              </defs>
+              <text>
+                <textPath
+                  href='#arched-text-path'
+                  startOffset='50%'
+                  textAnchor='middle'
+                >
+                  . Conheça o meu trabalho .
+                </textPath>
+              </text>
+            </ArchedText>
+            <FaArrowDown size={60} />
+          </ArrowContainer>
+        </CheckMyWorkContainer>
+      </HeroContainer>
+    </Background>
   );
 }

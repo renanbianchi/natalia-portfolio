@@ -118,7 +118,7 @@ export function NavBar() {
   const router = useRouter();
   const options = [
     { name: 'projetos', to: 'projects' },
-    { name: 'sobre mim', to: 'about' },
+    { name: 'sobre', to: 'about' },
     { name: 'currículo', to: 'resume' },
   ];
 
