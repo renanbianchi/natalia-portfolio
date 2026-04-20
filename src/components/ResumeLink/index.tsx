@@ -28,7 +28,7 @@ const Container = styled.div`
 export function ResumeLink() {
   return (
     <Container>
-      <Link target="_blank" href={ process.env.NEXT_RESUME_LINK || "/documents/Natalia Araujo resume.pdf"} >
+      <Link target="_blank" href={ process.env.NEXT_PUBLIC_RESUME_LINK || "/documents/Natalia Araujo resume.pdf"} >
         <img src="/icons/arrow_up.svg" alt="arrow" />
       </Link>
     </Container>
