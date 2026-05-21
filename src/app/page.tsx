@@ -1,11 +1,11 @@
 'use client'
 
-import styled from 'styled-components';
 import { AboutMeDetails } from '@/components/AboutMeDetails';
 import { HeroHome } from '@/components/Hero';
 import { InfiniteText } from '@/components/InfiniteText';
 import { Projects } from '@/components/Projects';
 import { Resume } from '@/components/Resume';
+import styled from 'styled-components';
 
 const HomeContainer = styled.div`
   display: flex;
@@ -20,7 +20,7 @@ export default function Home() {
       <Projects />
       <InfiniteText />
       <AboutMeDetails />
-      <InfiniteText upsideDown />
+      <InfiniteText empty />
       <Resume />
     </HomeContainer>
   );

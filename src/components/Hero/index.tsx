@@ -108,9 +108,10 @@ const OpenDialogsContainer = styled.div`
 
 const Dialog = styled.span`
   font-family: ${({ theme }) => theme.fonts.poppins};
+  font-weight: 400;
   font-size: clamp(12px, 1vw, 14px);
   color: ${({ theme }) => theme.colors.iceCream};
-  max-width: 25vw;
+  max-width: 22vw;
 
   @media (max-width: 1280px) {
     width: 100%;
@@ -122,7 +123,7 @@ const HeaderContainer = styled.div`
   margin-top: 128px;
   display: flex;
   flex-direction: column;
-  width: 52px;
+  max-width: 86px;
   margin-bottom: 72px;
 `;
 
@@ -134,9 +135,10 @@ const GreenBar = styled.div`
 `;
 
 const PageInfo = styled.span`
-  font-family: ${({ theme }) => theme.fonts.bebasneue};
+  font-family: ${({ theme }) => theme.fonts.poppins};
   font-size: 24px;
   color: ${({ theme }) => theme.colors.iceCream};
+  text-transform: uppercase;
 `;
 
 const CheckMyWorkContainer = styled.div`
@@ -189,7 +191,7 @@ export function HeroHome() {
   const dialogs = [
     {
       content:
-        'Sou uma UX/UI designer com olhar analítico e uma vontade constante de entender como as pessoas pensam, sentem e se movimentam pelo mundo. Trago uma bagagem que mistura arquitetura, design gráfico e pesquisa, com foco em criar experiências acessíveis e cheias de intenção.',
+        'Sou uma Product Designer com olhar analítico que gosta de entender como as pessoas pensam, sentem e se movimentam pelo mundo',
     }
   ];
   return (

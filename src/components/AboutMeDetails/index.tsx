@@ -1,7 +1,6 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import {
-  PiAlien,
-  PiCat, PiGlobeHemisphereWest, PiMusicNotes,
+  PiCat, PiGlobeHemisphereWest, PiMusicNotes
 } from 'react-icons/pi';
 import styled, { css } from 'styled-components';
 import { Background, Container, Ellipsis } from '../Shared';
@@ -11,8 +10,6 @@ const ContentContainer = styled.div<{reversed?: boolean}>`
   display: flex;
   justify-content: ${({ reversed }) => (reversed ? 'center' : '')};
   align-items: ${({reversed}) => reversed ? `flex-start` : `center`};
-  margin-top: 79px;
-  margin-bottom: 140px;
   gap: 113px;
 
   @media (max-width: 1280px) {
@@ -45,9 +42,8 @@ const PictureContainer = styled.div<{reversed?: boolean}>`
   };
 
     ${({ reversed }) => reversed && css`
-    position: absolute; 
-    bottom: -190px; 
-    left: -90px;
+    margin-top: -48px;
+    margin-left: -48px;
 
     > img {
       max-width: 240px;
@@ -55,8 +51,8 @@ const PictureContainer = styled.div<{reversed?: boolean}>`
     }
 
     @media (max-width: 1280px) {
-      
       left: 0px;
+      margin-right: auto;
     }
     `
   }
@@ -68,33 +64,26 @@ const Description = styled.h1`
 
   font-family: ${({ theme }) => theme.fonts.boldfont};
   color: ${({ theme }) => theme.colors.midnightBlue};
-  font-size: 96px;
+  font-size: clamp(42px, 8vw, 96px);
   font-weight: 400;
   white-space: pre-wrap;
   width: 807px;
 
 
   @media (max-width: 1280px) {
-    margin-top: 140px;
+    margin-top: 40px;
+    margin-bottom: 24px;
     font-size: 42px;
     width: auto;
   }
-`;
-
-const WhiteBar = styled.div`
-  width: 100%;
-  height: 1px;
-  background-color: ${({ theme }) => theme.colors.iceCream};
-  border-radius: 24px;
-  margin-bottom: 49px;
 `;
 
 const CuriositiesContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
-  margin-top: -230px;
   margin-left: 80px;
+  margin-bottom: 200px;
 
   @media (max-width: 1280px) {
     flex-direction: column;
@@ -140,48 +129,32 @@ export function AboutMeDetails() {
               </PictureContainer>
             </PictureContainer>
             <Description>
-              <span>UX/UI Designer,</span>
-              <span>arquiteta,</span>
-              <span>pesquisadora,</span>
-             <span>e curiosa.</span>
+              <span>Bons produtos</span>
+              <span>comecam com</span>
+              <span>boas perguntas</span>
             </Description>
           </ContentContainer>
-          <WhiteBar />
           <ContentContainer reversed>
             <CuriositiesContainer>
               <Curiosities>
-                <PiCat size={40} />
-                {' '}
-                <span>
-                  Adoro animais, especialmente gatos. Para recordar uma das gatas que tive,
-                  chamada Ramona, fiz uma montagem dela no quadro “Dama com Arminho”, de Da Vinci.
-                  {' '}
-                </span>
-              </Curiosities>
-              <Curiosities>
                 <PiGlobeHemisphereWest size={40} />
                 <span>
-                  Tenho disponibilidade para mudança. Nasci em Goiânia,
-                  mas através de bolsas de estudo e outras oportunidades,
-                  já morei em Brasília, Chicago e Nova Iorque.
+                  Minha trajetória começou no design gráfico e na arquitetura, o que me trouxe uma base sólida em comunicação visual, organização da informação e pensamento sistêmico. Isso influencia diretamente a forma como estruturo problemas e tomo decisões de design.
                   {' '}
                 </span>
               </Curiosities>
               <Curiosities>
                 <PiMusicNotes size={40} />
                 <span>
-                  Gosto de aprender coisas novas, por isso, quando era adolescente,
-                  aprendi a tocar trompete na banda marcial da escola.
-                  Isso me ensinou muito sobre trabalho em equipe e dedicação.
+                  Ao longo da minha carreira, trabalhei em projetos ligados à saúde, bem-estar e acessibilidade, onde o design pode gerar impacto real no dia a dia das pessoas. Acredito que bons produtos precisam ser claros, consistentes e respeitar quem está do outro lado da tela.
                 </span>
               </Curiosities>
               <Curiosities>
-                <PiAlien size={40} />
+                <PiCat size={40} />
+                {' '}
                 <span>
-                  Quando não estou estudando UX e UI design,
-                  assisto séries e filmes sci-fi, de investigação policial,
-                  comédias e vlogs de viagem.
-                  Aprendi inglês sozinha através dessas mídias.
+                  Gosto de buscar referências fora do óbvio. Às vezes isso aparece em projetos, às vezes em uma montagem da minha gata reinterpretando um quadro clássico, no fim, tudo faz parte da mesma forma de observar o mundo com curiosidade e atenção
+                  {' '}
                 </span>
               </Curiosities>
             </CuriositiesContainer>

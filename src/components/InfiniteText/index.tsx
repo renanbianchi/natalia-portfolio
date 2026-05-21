@@ -1,4 +1,5 @@
 import styled, { keyframes } from 'styled-components';
+import { Background } from '../Shared';
 
 const infiniteScroll = keyframes`
   0% {
@@ -18,13 +19,7 @@ const Container = styled.div<{ $upsideDown?: boolean }>`
   transform: rotate(4deg) ${({ $upsideDown }) => ($upsideDown ? 'scale(-1, -1)' : '')};
   background-color: ${({ theme }) => theme.colors.violet};
   padding: 20px 0px;
-  margin-top: -50px;
-  margin-bottom: -50px;
-
-  @media (max-width: 1280px) {
-    margin-top: -30px;
-    margin-bottom: -30px;
-  }
+  min-height: 70px;
 `;
 
 const Content = styled.span`
@@ -38,13 +33,15 @@ const Content = styled.span`
   animation: ${infiniteScroll} 10s linear infinite;
 `;
 
-export function InfiniteText({upsideDown}: { upsideDown?: boolean }) {
+export function InfiniteText({upsideDown, empty}: { upsideDown?: boolean; empty?: boolean }) {
   const aboutMeText = '\xa0. sobre mim . sobre mim . sobre mim . sobre mim . sobre mim . sobre mim . sobre mim . sobre mim . sobre mim . sobre mim';
 
   return (
-    <Container $upsideDown={upsideDown}>
-      <Content>{aboutMeText}</Content>
-      <Content>{aboutMeText}</Content>
-    </Container>
+    <Background color="iceCream">
+      <Container $upsideDown={upsideDown}>
+        <Content>{empty ? '' : aboutMeText}</Content>
+        <Content>{empty ? '' : aboutMeText}</Content>
+      </Container>
+    </Background>
   );
 }

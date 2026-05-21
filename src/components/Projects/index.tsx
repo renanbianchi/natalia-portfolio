@@ -31,17 +31,6 @@ export function Projects() {
       disabled: false,
     },
     {
-      img: '/images/adotaplus.webp',
-      alt: 'imagem adota+',
-      title: 'adota +',
-      subtitle: 'uma solução digital para ajudar na adoção de animais resgatados por ongs',
-      description:
-        'A proposta deste projeto é criar uma solução digital fictícia para a ajudar a doação de animais resgatados por ONGs. O principal desafio foi criar uma <b>solução para este problema em apenas uma semana</b>, com o embasamento necessário, além de prototipar e testar a proposta',
-      tags: ['ux', 'ui', 'figma', 'web'],
-      to: '/projects/adota-mais',
-      disabled: true,
-    },
-        {
       img: '/images/brazeiro.webp',
       alt: 'imagem brazeiro+',
       title: 'brazeiro',

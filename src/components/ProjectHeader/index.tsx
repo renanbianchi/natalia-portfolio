@@ -28,7 +28,7 @@ const HeaderName = styled.span`
 
 const Title = styled.h1`
   text-transform: uppercase;
-  font-family: ${({ theme }) => theme.fonts.bebasneue};
+  font-family: ${({ theme }) => theme.fonts.poppins};
   font-size: 96px;
   max-width: 1200px;
 

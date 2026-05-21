@@ -1,10 +1,10 @@
-import MailOutlineIcon from '@mui/icons-material/MailOutline';
 import CloseIcon from '@mui/icons-material/Close';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import styled from 'styled-components';
-import React, { useEffect, useState } from 'react';
+import MailOutlineIcon from '@mui/icons-material/MailOutline';
 import MenuIcon from '@mui/icons-material/Menu';
 import { useRouter } from 'next/navigation';
+import { useEffect, useState } from 'react';
+import styled from 'styled-components';
 import theme from '../../../public/theme';
 
 const NavBarContainer = styled.div<{ $visible: boolean; $menuopen: boolean }>`
@@ -42,7 +42,7 @@ const NavigateButton = styled.button`
   background-color: transparent;
   cursor: pointer;
   text-transform: uppercase;
-  font-family: ${() => theme.fonts.bebasneue};
+  font-family: ${() => theme.fonts.poppins};
   font-size: 20px;
   color: ${() => theme.colors.iceCream};
   text-decoration: none;
@@ -81,7 +81,7 @@ const LinkButton = styled.a`
   display: flex;
   margin-bottom: -1px;
   gap: 8px;
-  font-family: ${() => theme.fonts.bebasneue};
+  font-family: ${() => theme.fonts.poppins};
   font-size: 20px;
   color: ${() => theme.colors.iceCream};
 `;

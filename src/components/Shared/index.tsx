@@ -51,13 +51,13 @@ export const PageInfoHeaderText = styled.h1`
   }
 `;
 
-export const Ellipsis = styled.img<{ $top?: string; $left?: string; $right?: string; $bottom?: string }>`
-  background-image: url('/images/noise.webp');
+export const Ellipsis = styled.img<{ $top?: string; $left?: string; $right?: string; $bottom?: string, $noise?: boolean }>`
+  ${({$noise}) => $noise && "background-image: url('/images/noise.webp')"};
   position: absolute;
   top: ${({ $top }) => $top || 'auto'};
   bottom: ${({ $bottom }) => $bottom || 'auto'};
   left: ${({ $left }) => $left || 'auto'};
   right: ${({ $right }) => $right || 'auto'};
-  filter: blur(400px);
+  filter: blur(40px);
   pointer-events: none;
 `;

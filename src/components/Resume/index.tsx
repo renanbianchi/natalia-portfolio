@@ -37,6 +37,18 @@ const SkillsAndResume = styled.div`
 export function Resume() {
   const contents = [
     {
+      title: 'Personal Fit',
+      subtitle: 'UX/UI Designer voluntário',
+      description: 'Pesquisa, análise, criação de protótipos, handoff e style guide para app da área Fitness',
+      width: '280px',
+    },
+    {
+      title: 'Tech Pro Bem',
+      subtitle: 'UX/UI Designer',
+      description: 'Pesquisa, análise, criação de protótipos, handoff e style guide para site de ONG de saúde mental.',
+      width: '300px',
+    },
+    {
       image: '/icons/design-circuit.png',
       alt: 'imagem design-circuit',
       title: 'Design Circuit',
@@ -49,12 +61,23 @@ export function Resume() {
       subtitle: 'UX Design',
     },
     {
+      image: '/icons/more.png',
+      alt: 'imagem more',
+      title: 'IA no Processo de Design',
+      subtitle: 'Môre Educação',
+    },
+    {
       image: '/icons/unb.png',
       alt: 'imagem unb',
       title: 'Universidade de Brasília',
       subtitle: 'Arquitetura e Urbanismo',
-      description: 'Matérias favoritas: Geometria analítica, intro a fotografia',
-      width: '70px',
+      imageWidth: '70px',
+    },
+    {
+      title: 'Illinois Institute of Technology (IIT)',
+      subtitle: 'Pesquisador acadêmico',
+      description: 'Pesquisa sobre transporte público. APresentação ao Chicago Metropolitan Agency for Planning',
+      width: '300px',
     },
     {
       image: '/icons/alura.png',
@@ -63,17 +86,31 @@ export function Resume() {
       subtitle: 'Figma',
     },
     {
-      image: '/icons/figma.png',
-      alt: 'imagem figma',
-      bgColor: '#2D2E37',
-      width: '42px',
-    },
-    {
       image: '/icons/the-new-school.svg',
       alt: 'imagem parsons',
       title: 'Parsons The New School for Design',
       subtitle: 'Architectural Design',
-      width: '81px',
+      imageWidth: '81px',
+    },
+    {
+      image: '/icons/iesb.svg',
+      alt: 'imagem iesb',
+      title: 'Instituto de Educação Superior de Brasília',
+      subtitle: 'Design Gráfico',
+      imageWidth: '65px',
+    },
+    {
+      title: 'Instituto Brasileiro de Geografia e estatística (IBGE)',
+      subtitle: 'Agente Censitário Operacional',
+      description: 'Apoio nas atividades da pesquisa censitária de 2022',
+      width: '280px',
+    },
+    {
+      title: 'AMP Propaganda',
+      subtitle: 'Estágio em Design',
+      description:
+        'Desenvolvimento e derivação de diversas peças digitais e impressas, cartilhas, sites e identidades visuais.',
+      width: '280px',
     },
     {
       image: '/icons/uk.png',
@@ -81,45 +118,7 @@ export function Resume() {
       title: 'Inglês',
       subtitle: 'Avançado',
       description: 'Nível C1',
-      width: '71px',
-    },
-    {
-      image: '/icons/iesb.svg',
-      alt: 'imagem iesb',
-      title: 'Instituto de Educação Superior de Brasília',
-      subtitle: 'Design Gráfico',
-      width: '65px',
-    },
-    {
-      image: '/icons/illustrator.png',
-      alt: 'imagem illustrator',
-      bgColor: '#330000',
-    },
-    {
-      title: 'Instituto Brasileiro de Geografia e estatística (IBGE)',
-      subtitle: 'Agente Censitário Operacional',
-      description: 'Apoio nas atividades da pesquisa censitária de 2022',
-    },
-    {
-      title: 'Illinois Institute of Technology (IIT)',
-      subtitle: 'Pesquisador acadêmico',
-      description: 'Pesquisa sobre transporte público. APresentação ao Chicago Metropolitan Agency for Planning',
-    },
-    {
-      image: '/icons/photoshop.png',
-      alt: 'imagem photoshop',
-      bgColor: '#001E36',
-    },
-    {
-      title: 'AMP Propaganda',
-      subtitle: 'Estágio em Design',
-      description:
-        'Desenvolvimento e derivação de diversas peças digitais e impressas, cartilhas, sites e identidades visuais.',
-    },
-    {
-      image: '/icons/in-design.png',
-      alt: 'imagem inDesign',
-      bgColor: '#54001A',
+      imageWidth: '71px',
     },
   ];
 

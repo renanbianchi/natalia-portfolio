@@ -20,6 +20,7 @@ const SkillsContainer = styled.div`
   gap: 19px;
   flex-wrap: wrap;
   justify-content: center;
+  max-width: 60vw;
 
   @media (max-width: 1280px) {
     flex-direction: row;
@@ -35,7 +36,7 @@ export function Skills({ contents } : {contents: SkillContainerProps[]}) {
     <Container>
       <SkillsContainer>
         {contents.map(({
-          image, alt, bgcolor, title, subtitle, description, width,
+          image, alt, bgcolor, title, subtitle, description, width, imageWidth
         }) => (
           <Skill
             key={title || image}
@@ -45,6 +46,7 @@ export function Skills({ contents } : {contents: SkillContainerProps[]}) {
             title={title || ''}
             subtitle={subtitle || ''}
             description={description || ''}
+            imageWidth={imageWidth || ''}
             width={width || ''}
           />
         ))}

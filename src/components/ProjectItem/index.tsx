@@ -38,15 +38,6 @@ const ImageContainer = styled.div<{ $img: string; alt: string }>`
 
 const Container = styled.div`
   width: 100%;
-`;
-
-const LinkWrapper = styled.div`
-  display: flex;
-  justify-content: left;
-  gap: 24px;
-  width: 100%;
-  max-height: 364px;
-
   &:hover {
     ${ImageContainer} {
       transition: all 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -56,6 +47,14 @@ const LinkWrapper = styled.div`
       margin-right: 24px;
     }
   }
+`;
+
+const LinkWrapper = styled.div`
+  display: flex;
+  justify-content: left;
+  gap: 24px;
+  width: 100%;
+  max-height: 364px;
 
   @media (max-width: 1280px) {
     flex-direction: column;
@@ -84,12 +83,12 @@ const Title = styled.span`
 `;
 
 const SubTitle = styled.h1`
-  font-family: ${({ theme }) => theme.fonts.bebasneue};
+  font-family: ${({ theme }) => theme.fonts.poppins};
   font-size: 36px;
   text-transform: uppercase;
   margin-bottom: 16px;
   width: 509px;
-
+  line-height: 1;
   @media (max-width: 1280px) {
     font-size: 32px;
     width: 100%;

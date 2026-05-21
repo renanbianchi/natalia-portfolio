@@ -8,6 +8,7 @@ export interface SkillContainerProps {
   description?: string | undefined,
   bgcolor?: string | undefined,
   width?: string | undefined,
+  imageWidth?: string | undefined,
 }
 
 const skillDefaultProps = {
@@ -20,24 +21,22 @@ const skillDefaultProps = {
   width: '72',
 };
 
-const Container = styled.div<{$bgcolor: string}>`
+const Container = styled.div<{$bgcolor: string, $width: string}>`
   display: flex;
-  gap: 24px;
-  min-width: 180px;
+  flex-direction: column;
+  gap: 8px;
   justify-content: center;
-  align-items: center;
-  padding: 8px 54px;
+  align-items: flex-start;
+  padding: 16px;
   background-color: ${({ $bgcolor, theme }) => ($bgcolor || theme.colors.iceCream)};
-  border-radius: 100px;
-  width: fit-content;
+  border-radius: 24px;
+  ${({ $width }) => $width && `max-width: ${$width};`}
   transition: width 0.5s ease;
-  filter: drop-shadow(0px 16px 16px rgba(16, 23, 32, 0.1));
+  filter: drop-shadow(0px 30px 10px rgba(16, 23, 32, 0.1));
 
 
   @media (max-width: 1280px) {
-    padding: 4px 18px;
     min-width: auto;
-    border-radius: 48px;
     min-height: 100px;
     gap: 12px;
 
@@ -50,7 +49,7 @@ const Container = styled.div<{$bgcolor: string}>`
 const ContentContainer = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   width: 100%;
 
 @media (max-width: 1280px) {
@@ -67,12 +66,13 @@ const Title = styled.h2`
 
 const Subtitle = styled.span`
   font-family: ${({ theme }) => theme.fonts.poppins};
+  font-style: italic;
   font-size: 12px;
   font-weight: 400;
 `;
 
 const Description = styled.span`
-  text-align: center;
+  text-align: left;
   font-family: ${({ theme }) => theme.fonts.poppins};
   font-size: 12px;
   font-weight: 400;
@@ -80,21 +80,20 @@ const Description = styled.span`
 
   @media (max-width: 1280px) {
     width: 100%;
-    text-align: center;
   }
 `;
 
 export function Skill({
-  image = '', alt = '', title = '', subtitle = '', description = '', bgcolor = '', width = '',
+  image = '', alt = '', title = '', subtitle = '', description = '', bgcolor = '', width = '', imageWidth = '',
 }: SkillContainerProps & typeof skillDefaultProps) {
   return (
-    <Container $bgcolor={bgcolor || ''}>
+    <Container $width={width} $bgcolor={bgcolor || ''}>
       {image && (
-        <img width={width} src={image} alt={alt || ''} />
+        <img width={imageWidth} src={image} alt={alt || ''} />
       )}
 
       {title && subtitle && (
-        <ContentContainer>
+        <ContentContainer >
           <Title>{title}</Title>
           <Subtitle>{subtitle}</Subtitle>
           {description && (

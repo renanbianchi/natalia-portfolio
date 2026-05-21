@@ -73,8 +73,9 @@ const EmailAndLinkedinLinks = styled.div`
 `;
 
 const LinkTo = styled(Link)`
-  font-family: ${({ theme }) => theme.fonts.bebasneue};
-  font-size: 32px;
+  font-family: ${({ theme }) => theme.fonts.boldfont};
+  font-size: 24px;
+  font-weight: 400;
   text-transform: uppercase;
   display: flex;
   align-items: center;
@@ -99,7 +100,7 @@ export function Footer() {
           <LinkTo target='_blank' href='mailto:natalia.lia15@gmail.com'>Email <MdOutlineContentCopy size={24} /></LinkTo>
           <LinkTo target='_blank' href='https://www.linkedin.com/in/nataliafernandesaraujo/'>Linkedin <MdArrowOutward size={24} /></LinkTo>
         </EmailAndLinkedinLinks>
-        <Ellipsis width={374} $right='0px' src='/images/elipse-blur-about-me.svg' alt='Ellipsis' />
+        <Ellipsis width={1600} $right='-600px' $top="-380px" src='/images/elipse-blur-about-me.svg' alt='Ellipsis' $noise />
       </ContentContainer>
     </Background>
   );
